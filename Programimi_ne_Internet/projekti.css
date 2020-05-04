@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
 *{
 	margin: 0;
 	padding: 0;
@@ -30,11 +31,11 @@ nav#mainMenu{
 nav{
 	color:#616767;
 }
-nav a{
+#ani{
 	padding: 1em;
 	text-transform: uppercase;
 }
-a{
+#ani{
 	color:#656A6D;
 	text-decoration: none;
 	display: inline;
@@ -43,7 +44,7 @@ a{
 a.active{
 	color: #FCFFFF;
 }
-a:hover{
+#ani:hover{
 	color: #FCFFFF;
 	border-top:solid 4px #B86366;
 	padding-top: 2.8em;
@@ -174,7 +175,7 @@ width: 60px;
 	text-align: center;
 	font-size: 32px;
 }
-a#dropdowmi:hover{
+#dropdowmi:hover{
 color: #ffffff;
 font-family: wide latin;
 }
@@ -242,26 +243,18 @@ p#shkronja{
 	clear: both;
 	margin-top: 2em;
 	padding: 2em;
+
 	padding-left: 0em;
 	padding-right: 1em;
 	border-bottom: solid 1px #ABABAB;
 	height: 5em;
-float: right;
+
 
 }
 canvas#majtas{
 	float: left;
 }
-canvas#myCanvas1{
-	float: right;
 
-}
-div#djathtas{
-	float: right;
-}
-td#djathtas{
-	float: right;
-}
 p#qwe{
 	font-style: italic;
 	font-weight: bold;
@@ -269,11 +262,13 @@ p#qwe{
 }
 div#sub{
 	float: left;
-	padding-right: 8em;
+	padding-right: 1em;
 }
 div#email{
 	float: right;
-	padding-top: 1em;
+	margin-top: 0em;
+	margin-bottom: 10em;
+
 
 }
 #feat{
@@ -296,14 +291,12 @@ img.smartthing{
 	height: 35px;
 }
 .emaili{
-
-	margin-left: 9em;
+	margin-left: 1em;
 	font-size: 1.2em;
 	border: solid 1px #ABABAB;
-	padding: 0.5em;
 	background-color: #dddddd;
 	border-radius: 7px;
-	width: 20em;
+	width: 8em;
 }
 .signupi{
 	background-color: #dddddd;
@@ -406,7 +399,187 @@ span#shigjeta{
 	align:center;
 	padding-left: 0.2em;
 }
-a.linket:hover{
+
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
+.footer-distributed{
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 55px 50px;
+}
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Open Sans', cursive;
+	margin: 0;
+}
+
+.footer-distributed h3 span{
+	color:  lightseagreen;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+  font-weight:400;
+	text-decoration: none;
+	color:  inherit;
+}
+.footer-distributed .footer-company-name{
+	color:  #222;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+  font-weight:400;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  lightseagreen;
+	text-decoration: none;;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "|";
+  font-weight:300;
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+
+}
+.linket:hover{
 	color: #FCFFFF;
 border: none;}
 #contacti{
@@ -430,12 +603,7 @@ img.facebookii{
 			color:grey;
 
 }
-img.facebookii:hover{
-	width: 6em;
-	height: 6em;
-	-webkit-transition:width 3s,height 3s;
-	transition: width 3s,height 3s;
-}
+
 /*dropdown_menu*/
 
 li a.dropdbtn.dropdown{
@@ -445,7 +613,7 @@ li a.dropdbtn.dropdown{
 	text-decoration: none;
 	margin: 0;
  }
- li a:hover,.dropdown:hover{
+ li .dropdown:hover{
  background-color: #1F2531;
  }
  li.dropdown{
@@ -472,7 +640,7 @@ margin-left: 30em;
 	text-align: left;
 	float: none;
 }
-.dropdown-content a:hover{
+.dropdown-content :hover{
 background-color: :#1F2531;
 border-radius: 5px;
 }
