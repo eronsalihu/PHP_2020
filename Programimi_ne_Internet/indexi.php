@@ -1,7 +1,187 @@
 <?php
 require('headeri.php');
  ?>
+<style media="screen">
 
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
+.footer-distributed{
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: bold 16px sans-serif;
+  padding: 55px 50px;
+}
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+  width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+  color:  #ffffff;
+  font: normal 36px 'Open Sans', cursive;
+  margin: 0;
+}
+
+.footer-distributed h3 span{
+  color:  lightseagreen;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+  color:  #ffffff;
+  margin: 20px 0 12px;
+  padding: 0;
+}
+.footer-distributed .footer-links a{
+  display:inline-block;
+  line-height: 1.8;
+  font-weight:400;
+  text-decoration: none;
+  color:  inherit;
+}
+.footer-distributed .footer-company-name{
+  color:  #222;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+  width: 35%;
+}
+
+.footer-distributed .footer-center i{
+  background-color:  #33383b;
+  color: #ffffff;
+  font-size: 25px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  margin: 10px 15px;
+  vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+  font-size: 17px;
+  line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+  display: inline-block;
+  color: #ffffff;
+  font-weight:400;
+  vertical-align: middle;
+  margin:0;
+}
+
+.footer-distributed .footer-center p span{
+  display:block;
+  font-weight: normal;
+  font-size:14px;
+  line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+  color:  lightseagreen;
+  text-decoration: none;;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "|";
+  font-weight:300;
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+  width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+  line-height: 20px;
+  color:  #92999f;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+  display: block;
+  color:  #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+  margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color:  #33383b;
+  border-radius: 2px;
+
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+  .footer-distributed{
+    font: bold 14px sans-serif;
+  }
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right{
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .footer-distributed .footer-center i{
+    margin-left: 0;
+  }
+
+}
+</style>
 <div class="foto">
 	<img src="phone.png">
 </div>
@@ -154,17 +334,19 @@ require('headeri.php');
 
 <td>
 	<div class="eee">
+
 		<div id="sub"><p class="sub">SUBSCRIBE</p>
 		<p class="miss">Don't Miss Our Last Offers & Promotions</p>
 		</div>
-		<div id="email">
-			<form class="" action="index.html" method="get">
 
+
+    <div id="email">
+		<form class="" action="contact.php" method="post">
 			<input type="text" name="wEmail" value="" placeholder="Enter Your Email Here" class="emaili">
-			<input type="button" name="Sign Up" value="Sign Up" class="signupi" id="p1"
-			onclick="location.href='Contact.html'">
-			</form>
-		</div>
+      <input type="submit" name="Sign Up" value="Sign Up" class="signupi" id="p1"
+			onclick="location.href='contact.php'">
+		</form>
+  </div>
 	</div>
 </td>
 
@@ -198,81 +380,64 @@ require('headeri.php');
 </div>
 </div>
 </div>
+<div class="footer-distributed">
+
+			<div class="footer-left">
+
+				<h3>FIEK<span>Students</span></h3>
+
+				<p class="footer-links">
+					<a href="indexi.php" class="link-1">Home</a>
+
+					<a href="style_demo.php">Style</a>
+
+					<a href="gallery.php">Gallery</a>
+
+
+
+					<a href="contact.php">Contact</a>
+				</p>
+
+				<p class="footer-company-name">Company Name © 2015</p>
+			</div>
+
+			<div class="footer-center">
+
+				<div>
+					<i class="fa fa-map-marker"></i>
+					<p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<p>+1.555.555.5555</p>
+				</div>
+
+				<div>
+					<i class="fa fa-envelope"></i>
+					<p><a href="mailto:fiek@uni-pr.edu">fiek@uni-pr.edu</a></p>
+				</div>
+
+			</div>
+
+			<div class="footer-right">
+
+				<p class="footer-company-about">
+					<span>About the company</span>
+					Smart Apps are innovative systems that gather tremendous amounts of data
+          from sensors and other sources, using machine learning algorithms and predictive analytics
+          to make this information actionable for users and to improve experiences.
+          We’re now at another inflection point in the history of application development. By 2020,
+           the world’s data will double every two months.
+				</p>
+
+
+			</div>
+
+		</div>
 
 <footer>
 
-	<div class="footer-panel">
-		<div class="footer-title">FROM THE BLOG</div>
-		<div class="footer-content" id="newspaper">
-			<h3>Blog Post Title</h3><br>
-			<p> <mark>Lorem Ipsum</mark> is simply dummy text of the printing and typesetting industry . Lorem Ipsum has been the industry's
-				 standard dummy text ever since the 1500s , when an unknown printer took a gallery of type and scrambled it to make
-				  a type specimen book . It has survived not only five centuries , but also the leap into electronic typesetting ,
-					 remaining essentially unchanged . It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages ,
-					  and more recently with desktop publishing software like <abbr title="Aldus PageMaker">  AP </abbr>including versions of Lo</p>
-
-		<a href="https://loremipsum.de/" target="_blank"><p id="read">Read more<span id="shigjeta">>></span> </p></a>
-		</div>
-	</div>
-
-
-	<div class="footer-panel">
-		<div class="footer-title">QUICK LINKS</div>
-		<div class="footer-content">
-			<ul>
-				<li><a href="https://www.mendix.com" target="_blank" class="linket">Mendix-Smart Apps</a></li>
-				<li><a href="https://app.urlgeni.us/" target="_blank" class="linket">Deep Learning</a></li>
-				<li><a href="https://freedom.to/"target="_blank" class="linket">Freedom</a></li>
-				<li><a href="https://www.pcworld.com/" target="_blank" class="linket">PC World</a></li>
-				<li><a href="https://circleci.com/" target="_blank" class="linket">Circleci</a></li>
-				<li><a href="https://developer.apple.com/" target="_blank" class="linket">Apple Developer</a></li>
-				<li><a href="https://developer.samsung.com/" target="_blank" class="linket">Samsung Developer</a></li>
-				<li><a href="https://flutter.dev/" target="_blank" class="linket">Flutter</a></li>
-			</ul>
-		</div>
-	</div>
-
-	<div class="footer-panel">
-		<div class="footer-title"><span id="contacti">CONTACT US</span>
-			<p></p>
-		<div class="footer-content">
-<div id="tedhenat">
-<address>
-
-Students From FIEK <br>
-Bregu Diellit 201645 <br>
-Prishtine <br>
-Post Code: 10000 <br>
-<p id="paragrafet">Tel:</p>
-<p >+38345311711</p>
-<p id="paragrafet">Fax:</p>
-<p >+38369213635</p>
-<p id="paragrafet">Email</p>
-<p ><a class="linket" href="mailto:studentet@up.edu">studentet@up.edu</a></p></div>
-</address>
-		</div>
-		</div>
-	</div>
-	<div class="footer-panel">
-		<div class="footer-title">SOCIALIZE</div>
-		<div class="footer-content-socials">
-			<ul>
-				<li><a href="https://www.facebook.com/" class="linket" target="_blank" ><img src="facebook.jpeg"/ class="facebookii" ><span id="fcb">FACEBOOK</span></a></li>
-				<li><a href="https://www.twitter.com/" class="linket" target="_blank" ><img src="twitter.png"/ class="facebookii" ><span id="fcb">TWITTER</span></a></li>
-				<li><a href="https://www.flickr.com/" class="linket" target="_blank" ><img src="flickr.jpg"/ class="facebookii" ><span id="fcb">FLICKR</span></a></li>
-				<li><a href="https://rss.com/" class="linket" target="_blank" ><img src="rss.png"/ class="facebookii" ><span id="fcb">RSS FEED</span></a></li>
-
-			</ul>
-		</div>
-	</div>
-
-	<!--
-	Definition list
-	<dl class="">
-		<dt>DD ne distance 0</dt>
-		<dd>Me nje distance tab</dd>
-	</dl>
-	-->
   <?php
 require('footeri.php');
    ?>
