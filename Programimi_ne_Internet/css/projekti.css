@@ -1,0 +1,314 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.border{
+	border-bottom: solid 1px #5C606C;
+	margin-left: 1em;
+	margin-right: 1em;
+	margin-bottom: 2em;
+  padding-bottom: 1.2em;
+
+}
+
+nav ul li{
+	list-style: none;
+	display: inline;
+  padding: 0.7em;
+}
+nav#mainMenu{
+	background-color: #1F2531;
+	text-align: right;
+	padding: 2.3em;
+	font-family: Times-New-Roman;
+	font-size: 1em;
+	margin-right: 1em;
+}
+nav{
+	color:#616767;
+}
+nav a{
+	padding: 1em;
+	text-transform: uppercase;
+}
+a{
+	color:#656A6D;
+	text-decoration: none;
+	display: inline;
+}
+
+a.active{
+	color: #FCFFFF;
+}
+a:hover{
+	color: #FCFFFF;
+	border-top:solid 4px #B86366;
+	padding-top: 2.8em;
+}
+
+.smarti_free{
+	background-color: #B86366;
+	padding: 3.3em 2.1em;
+	margin-left: 1em ;
+	border-radius: 0 0 1em 1em;
+	float: left;
+	border-width: 100%;
+
+}
+.smart{
+  font-size: 2.2em;
+  padding-bottom:0.6em;
+}
+.Free_Psd{
+  font-size: 0.8em;
+  padding-left: 1.5em;
+  color: #EACDCC;
+}
+
+/*dropdown_menu*/
+
+li a.dropdbtn.dropdown{
+	display: inline-block;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	margin: 0;
+ }
+ li a:hover,.dropdown:hover{
+ background-color: #1F2531;
+ }
+ li.dropdown{
+ 	display: inline-block;
+
+ }
+ 
+.dropdown-content{
+	margin-top: 1em;
+	display: none;
+	position: absolute;
+	background:#B86366;
+	width: 130px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0,2);
+
+}
+.dropdown-content a{
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+	float: none;
+}
+.dropdown-content a:hover{
+background-color: :#1F2531;
+border-radius: 5px;
+}
+.dropdown:hover .dropdown-content{
+	display: block;
+	border-radius: 5px;
+}
+
+html, body {
+	height: 100%;
+	background: #1F2531;
+}
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	
+	outline: none;
+	border: none;
+}
+
+.align {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding-bottom: 8px;
+}
+
+.logo {
+	width: 120px;
+}
+
+
+.card {
+	margin-top: 28px;
+	height: 100%;
+	max-height: 446px;
+	width: 396px;
+	background: #3c3c3c;
+	border: 1px solid #373737;
+	border-radius: 10px;
+	overflow: hidden;
+	transition: max-height 0.2s;
+}
+
+.extend {
+	max-height: 480px;
+}
+
+.head {
+	width: 100%;
+	display: flex;
+	height: 72px;
+	border-bottom: 1px solid #373737;
+	justify-content: space-between;
+}
+
+.head a {
+	height: 100%;
+	padding: 0 28px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: rgb(140,140,140);
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.head .selected {
+	position: relative;
+	color: #B86366;
+	font-weight: 700;
+}
+
+.head .selected:after {
+	position: absolute;
+	content: "";
+	bottom: 0;
+	left: 0;
+	height: 5px;
+	width: 100%;
+	background: #B86366;
+	border-radius: 99px 99px 0 0;
+}
+
+.tabs {
+	height: calc(100% - 72px);
+	display: flex;
+}
+
+form {
+	width: 100%;
+	height: 100%;
+	flex-shrink: 0;
+	padding: 44px 38px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	right: 0;
+	transition: right 0.2s;
+}
+
+.extend form {
+	right: 100%;
+}
+
+.inputs {
+	width: 100%;
+	padding-top: 6px;
+}
+
+.input {
+	position: relative;
+	margin-bottom: 20px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.input input {
+	width: 100%;
+	font-size: 17px;
+	background: white;
+	border-radius: 8px;
+	padding: 16px 18px 16px 51px;
+	color: rgb(220,220,220);
+}
+
+.input img {
+	width: 16px;
+	position: absolute;
+	left: 19px;
+}
+
+.checkbox {
+	height: 40px;
+	display: flex;
+	align-items: center;
+	position: relative;
+	cursor: pointer;
+}
+
+.checkbox input {
+	position: absolute;
+	opacity: 0;
+	height: 0;
+	width: 0;
+}
+
+.checkbox span {
+	display: flex;
+	align-items: center;
+	color: white;
+	font-size: 16px;
+	user-select: none;
+}
+
+.checkbox span:before {
+	content: "";
+	width: 22px;
+	height: 22px;
+	border-radius: 6px;
+	margin-right: 16px;
+	background-color: rgb(50,50,50);
+}
+
+.checkbox:hover input ~ span:before {
+	background-color: rgb(50,50,50);
+}
+
+.checkbox input:checked ~ span:before {
+	background-image: url(../img/checked.png);
+	background-size: cover;
+}
+
+.card button {
+	display: block;
+	background: #B86366;
+	padding: 14px 52px;
+	border-radius: 12px;
+	color: white;
+	font-weight: 700;
+	font-size: 21px;
+	cursor: pointer;
+}
+.footer-bottom
+{
+	margin-top:25px;
+	border-top:1px solid grey;
+	padding-top:15px;
+	margin-left: 1em;
+	margin-right: 1em;
+	color: grey;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
