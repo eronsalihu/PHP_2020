@@ -47,12 +47,28 @@ h1#h111{
  <div class="innerdivv" style="margin-left: 1em;">
         	<form id="contactForm" action="mailto:info@smartapp.com" method="post" enctype="text/plain">
         		Name:<br>
-        		<input type="text" name="name" required="" id="firstName" class="form-control"><br><br>
+        		<input type="text" name="name" required="" id="firstName" class="form-control" value="<?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST")
+            {
+                $email= $_POST['wEmail'];
+                $vargu=explode('@',$email);
+                $name=$vargu[0];
+                echo $name;
+              }
+
+            ?>">
+          <br><br>
             <button type="button" class="save" id="signupi">Save Name</button>
       <button type="button" class="access" id="signupi">Get Name</button><br>
 
         		E-mail:<br>
-            <input type="text" name="email"class="form-control" required=""><br>
+            <input type="text" name="email"class="form-control" required="" value="
+            <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST")
+            {
+            echo $_POST['wEmail'];
+          }
+             ?>">  <br>
         		Gender:<br>
         		<input type="radio" name="gender"class="form-control" value="female" checked=""> Male
         		<input type="radio" name="gender"class="form-control" value="other"> Female<br>
