@@ -1,105 +1,156 @@
 
-  <head>
-    <meta charset="utf-8">
-    <title>Contact</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
-  <link rel="stylesheet" type="text/css" href="css/projekti.css">
+  <?php
+  require('headeri.php');
+   ?>
+   <div class="none">
+    <div class="innerdivv" style="margin-left: 1em;">
+           	<form id="contactForm" action="mailto:info@smartapp.com" method="post" enctype="text/plain">
+           		Name:<br>
+           		<input type="text" name="name" required="" id="firstName" class="form-control"><br><br>
+               <button type="button" class="save" id="signupi">Save Name</button>
+         <button type="button" class="access" id="signupi">Get Name</button><br>
 
-<style >
+           		E-mail:<br>
+               <input type="text" name="email"class="form-control" required=""><br>
+           		Gender:<br>
+           		<input type="radio" name="gender"class="form-control" value="female" checked=""> Male
+           		<input type="radio" name="gender"class="form-control" value="other"> Female<br>
+               Subject:<br>
+           		<input type="text" name="subject" class="form-control" size="20" required=""><br>
+           		Message:<br>
+           		<textarea name="message" size="500"class="form-control" required=""></textarea><br>
+           		<div>Characters left:<span id="char-left"></span></div>
+           		Accept Terms and Conditions:<br>
+           		<input type="checkbox" name="terms" class="form-control" size="50"><br><br>
+           		<input type="submit" class="form-control submit" value="Send">
+   	     	</form>
+   		    </div>
 
-}
-</style>
-  </head>
-  <body>
-    <section class="smarti_free">
+   <script>
+   var d = new Date();
+   document.getElementById("demo").innerHTML = d;
+   </script>
+   	      
 
-    		<p class="smart" style=" color: white; font-family: Times-New-Roman;
-" >
-    			SMART APP <br>
-    		</p>
-    		<p class="Free_Psd" >
-    			 All About Smart Apss
-    		</p>
-    		</section>
-        <header>
+               </body>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+     <script>
+   function validateEmail(email) {
+   	    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+   	    return re.test(String(email).toLowerCase());
+   	}
+   var charactersLeft = 0;
+     	$( document ).ready(function() {
+     	   charactersLeft = $("textarea[name='message']").attr("size");
+     	   $("#char-left").text(charactersLeft);
+     	});
+   $("#contactForm").submit(function(){
+     		try {
+     		//console.acceptd();
+   			if($('input[name ="terms"]').prop("checked") == false)
+   		  	{
+   		  		alert("You must accept terms and conditions")
+   				return false;
+   	  		}
+                           if(!validateEmail($('input[name="email"]').val()))
+   	  		{
+   	  			alert("Email is not valid!");
+   	  			return false;
+   	  		}
+   	  		alert("Message Sent!");
+     		}
 
-            <nav id="mainMenu">
-               <ul class="lista">
-                 <li><a href="index.html" >Home</a></li>|
-                 <li><a href="style_demo.html">Style Demo</a></li>|
-                 <li><a href="Contact.html"class="active">Contact</a></li>|
-                 <li class="dropdown"><a href="#" class="dropdbtn" >Dropdown</a>
-            <div class="dropdown-content">
-              <a id="dropdowmia" href="https://www.smartthings.com/" target="_blank"> Smart Things</a>
-              <a id="dropdowmai" href="https://smartapp.io/" target="_blank">Smart App</a>
-              <a id="dropdowmia" href="https://www.apple.com/ios/app-store/" target="_blank"> App Store</a>
-              <a id="dropdowmia" href="https://play.google.com/" target="_blank">Play Store</a>
-            </div></li>|
-                 <li><a href="Gallery.html" >Gallery</a></li>
-               </ul>
-            </nav>
-            <p class="border"></p>
-        </header>
-        <div style="clear: both; text-align: center;">
-          <h1 style="color: white;font-family: Times-New-Roman;font-size: 40px; font:bold; color: #B86366" >Welcome Back</h1>
-          <p style="color: white;font-family: Times-New-Roman;font-size: 25px;">Login to continue</p>
-        </div>
-        <div class="align">
-    <div class="card">
-      <div class="head">
-        <div></div>
-        <a id="login" class="selected" href="#login">Login</a>
-        <a id="register" href="#register">Register</a>
-        <div></div>
-      </div>
-      <div class="tabs">
-        <form>
-          <div class="inputs">
-            <div class="input">
-              <input placeholder="Username" type="text">
-              <img src="img/user.svg">
-            </div>
-            <div class="input">
-              <input placeholder="Password" type="password">
-              <img src="img/pass.svg">
-            </div>
-            <label class="checkbox">
-              <input type="checkbox">
-              <span>Remember me</span>
-            </label>
-          </div>
-          <button style="font-family: Times-New-Roman">Login</button>
-        </form>
-        <form>
-          <div class="inputs">
-            <div class="input">
-              <input placeholder="Email" type="text">
-              <img src="img/mail.svg">
-            </div>
-            <div class="input">
-              <input placeholder="Username" type="text">
-              <img src="img/user.svg">
-            </div>
-            <div class="input">
-              <input placeholder="Password" type="password">
-              <img src="img/pass.svg">
-            </div>
-          </div>
-          <button style="font-family: Times-New-Roman">Register</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</body>
+
+                   catch(error) {
+     		  console.error(error);
+   		}
+     	});
+       if(localStorage) {
+       	$(document).ready(function() {
+       		$(".save").click(function() {
+       			// Get input name
+       			var firstName = $("#firstName").val();
+
+       			// Store data
+           		localStorage.setItem("first_name", firstName);
+       			alert("Your first name is saved.");
+       		});
+       		$(".access").click(function() {
+       			// Retrieve data
+           		alert("Hi, " + localStorage.getItem("first_name"));
+       		});
+       	});
+       } else {
+           alert("Sorry, your browser do not support local storage.");
+       }
+
+   $("textarea[name='message']").keydown(function(e){
+     		if(e.keyCode == 8)
+     		{
+     			charactersLeft++;
+     			$("#char-left").text(charactersLeft);
+     		}
+     		else
+     		{
+     			if(charactersLeft > 0)
+     			{
+     				charactersLeft--;
+     				$("#char-left").text(charactersLeft);
+     			}
+   	  		else
+   	  		{
+   	  			return false;
+   	  		}
+     		}
+     	});
+     </script>
+     <script>
+     	var contacts = ['Dave', 'Alice', 'Bob'];
+     	var emails = ['dave@smartapp.com','alice@smartapp.com','bob@smartapp.com'];
+
+     	var contactObject = [];
+     	for(var i = 0; i<contacts.length; i++)
+     	{
+     		var obj = {
+     			name:contacts[i],
+     			email:emails[i]
+     		};
+     		contactObject.push(obj);
+     	}
+     	var ul = '<ul>';
+       for(var i = 0; i<contactObject.length; i++)
+       {
+       	ul = ul + '<li><b>'+contactObject[i].name+'</b> <i>'+contactObject[i].email+'</i></li>';
+       }
+       ul = ul + '</ul>';
+       $("#contact-list").html(ul);
+       function updateBackground() {
+     var
+       hr = (new Date()).getHours(),
+       body = document.body,
+       bstyle = body.style,
+       hello = document.querySelector(".hello");
+     if (hr < 10) {
+       bstyle.backgroundColor = "#282C34";
+       bstyle.color = "black";
+       hello.innerText = "Have a good morning";
+     } else if (hr < 20) {
+       bstyle.backgroundColor = "#1F2533";
+       bstyle.color = "white";
+       hello.innerText ="Have a good day!";
+     } else {
+       bstyle.backgroundColor = "#41A5EE";
+       bstyle.color = "white";
+       hello.innerText = "Have a good night!";
+     }
+   }
+
+   setInterval(updateBackground, 1000 * 60);
+   updateBackground();
+     </script>
+
   <footer >
-    <div class="footer-bottom">
-    <span  style="color: #5C606C;margin-left: 1em;">Copyright ©  <script type="text/javascript">
-    document.write(new Date().getFullYear());
-  </script>
-  </div>
-  </footer>
-
-<script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/index.js"></script>
-
+  <?php
+require('footeri.php');
+   ?>
