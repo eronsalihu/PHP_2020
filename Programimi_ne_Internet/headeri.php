@@ -143,17 +143,17 @@ function startWorker() {
 
       <nav id="mainMenu">
          <ul>
-           <li><a href="indexi.php" >Home</a></li>|
-           <li><a href="style_demo.php" >Style Demo</a></li>|
-           <li><a href="contact.php">Contact</a></li>|
-           <li class="dropdown"><a class="dropdbtn" >Dropdown</a>
+           <li><a  id="ani" href="indexi.php" >Home</a></li>|
+           <li><a id="ani" href="style_demo.php" >Style Demo</a></li>|
+           <li><a id="ani" href="contact.php">Contact</a></li>|
+           <li id="ani" class="dropdown"><a class="dropdbtn" >Dropdown</a>
            	<div class="dropdown-content">
-           		<a id="dropdowmia" href="https://www.smartthings.com/" target="_blank"> Smart Things</a>
+           		<a id="dropdowmia" href="login.php" > LogIn/SignUp</a>
            		<a id="dropdowmai" href="https://smartapp.io/" target="_blank">Smart App</a>
            		<a id="dropdowmia" href="https://www.apple.com/ios/app-store/" target="_blank"> App Store</a>
 							<a id="dropdowmia" href="https://play.google.com/" target="_blank">Play Store</a>
            	</div></li>
-           <li><a href="gallery.php" >Gallery</a></li>
+           <li><a id="ani" href="gallery.php" >Gallery</a></li>
          </ul>
       </nav>
       <p class="border"></p>
