@@ -12,9 +12,6 @@
 
 }
 
-#canvas{
-	float: left;
-}
 nav ul li{
 	list-style: none;
 	display: inline;
@@ -31,11 +28,11 @@ nav#mainMenu{
 nav{
 	color:#616767;
 }
-#ani{
+nav a{
 	padding: 1em;
 	text-transform: uppercase;
 }
-#ani{
+a{
 	color:#656A6D;
 	text-decoration: none;
 	display: inline;
@@ -44,10 +41,13 @@ nav{
 a.active{
 	color: #FCFFFF;
 }
-#ani:hover{
+a:hover{
 	color: #FCFFFF;
 	border-top:solid 4px #B86366;
-	padding-top: 2.8em;
+
+}
+#ani:hover{
+    padding-top: 2.8em;
 }
 
 .smarti_free{
@@ -62,11 +62,55 @@ a.active{
 .smart{
   font-size: 2.2em;
   padding-bottom:0.6em;
+    color: #EACDCC;
 }
 .Free_Psd{
   font-size: 0.8em;
   padding-left: 1.5em;
   color: #EACDCC;
+}
+
+/*dropdown_menu*/
+
+li a.dropdbtn.dropdown{
+	display: inline-block;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	margin: 0;
+ }
+ li a:hover,.dropdown:hover{
+ background-color: #1F2531;
+ }
+ li.dropdown{
+ 	display: inline-block;
+
+ }
+
+.dropdown-content{
+	margin-top: 1em;
+	display: none;
+	position: absolute;
+	background:#B86366;
+	width: 130px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0,2);
+
+}
+.dropdown-content a{
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+	float: none;
+}
+.dropdown-content a:hover{
+background-color: :#1F2531;
+border-radius: 5px;
+}
+.dropdown:hover .dropdown-content{
+	display: block;
+	border-radius: 5px;
 }
 .foto{
 	float: right;
@@ -77,6 +121,9 @@ p.aaa{
 	padding-top: 2.7em;
 	padding-left: 12px;
 
+}
+#canvas{
+	float: left;
 }
 p.bbb{
 	padding-left: 1em;
@@ -606,48 +653,7 @@ img.facebookii{
 
 /*dropdown_menu*/
 
-li a.dropdbtn.dropdown{
-	display: inline-block;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-	margin: 0;
- }
- li .dropdown:hover{
- background-color: #1F2531;
- }
- li.dropdown{
- 	display: inline-block;
 
- }
- .canvasi123{
-margin-left: 30em;
- }
-.dropdown-content{
-	margin-top: 1em;
-	display: none;
-	position: absolute;
-	background:#B86366;
-	width: 130px;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0,2);
-
-}
-.dropdown-content a{
-	color: black;
-	padding: 12px 16px;
-	text-decoration: none;
-	display: block;
-	text-align: left;
-	float: none;
-}
-.dropdown-content :hover{
-background-color: :#1F2531;
-border-radius: 5px;
-}
-.dropdown:hover .dropdown-content{
-	display: block;
-	border-radius: 5px;
-}
 .innerdiv{
  width:600px;
 background:transparent;
@@ -656,12 +662,7 @@ outline: none;
 border-bottom: 1px pink;
 margin-bottom: 15px;
 }
-form{
-margin-top:50px;
-transition: all 4s ease-in-out;
-padding :10px;
 
-}
 .none{
 text-align:center;
 background-image:
@@ -704,7 +705,7 @@ background: #9A1844;
 border-color:transparent;
 font-size:20px;
 letter-spacing:2px;
-margin-top:20px;
+
 }
 #contact-list{
 
