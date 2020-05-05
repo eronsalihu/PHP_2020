@@ -81,7 +81,7 @@ li a.dropdbtn.dropdown{
  	display: inline-block;
 
  }
- 
+
 .dropdown-content{
 	margin-top: 1em;
 	display: none;
@@ -117,7 +117,7 @@ html, body {
 	margin: 0;
 	padding: 0;
 	text-decoration: none;
-	
+
 	outline: none;
 	border: none;
 }
@@ -290,6 +290,8 @@ form {
 	font-size: 21px;
 	cursor: pointer;
 }
+
+
 .footer-bottom
 {
 	margin-top:25px;
@@ -299,16 +301,3 @@ form {
 	margin-right: 1em;
 	color: grey;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
