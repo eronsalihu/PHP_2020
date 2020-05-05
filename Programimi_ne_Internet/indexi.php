@@ -341,10 +341,10 @@ require('headeri.php');
 
 
     <div id="email">
-		<form class="" action="contact.php" method="post">
+		<form class="" action="login.php" method="post">
 			<input type="text" name="wEmail" value="" placeholder="Enter Your Email Here" class="emaili">
       <input type="submit" name="Sign Up" value="Sign Up" class="signupi" id="p1"
-			onclick="location.href='contact.php'">
+			onclick="location.href='login.php'">
 		</form>
   </div>
 	</div>
