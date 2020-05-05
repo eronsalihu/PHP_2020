@@ -1179,7 +1179,7 @@ shot lasted 8 Hours. That’s the picture above.
 				<h3 class="butoni1"> If you make a lot of photos every day and want to share them with us and also get a lot of amazing photos , register now :
 				</h1>
 				<br>
-				<input class="button" type="button" value="Register" onclick="buttonclick()">
+				<input class="button" type="submit" value="Register" onclick="location.href='login.php#register'">
 			</div>
 			</td>
 			<td >
