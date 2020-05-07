@@ -311,12 +311,12 @@ function startWorker() {
             </label>
           </div>
             <input id="subb" type="submit" 	 name="login" value="Log In">
-        
+
         </form>
         <form>
           <div class="inputs">
             <div class="input">
-              <input placeholder="Email" type="text" name="email" value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST")
+              <input placeholder="Email" type="email" name="email" value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST")
               {
                 if (isset($_POST['wEmail'])) {
                   $email=$_POST['wEmail'];
