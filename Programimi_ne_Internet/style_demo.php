@@ -324,6 +324,7 @@ Finally, use the Google Assistant, Amazon Alexa, or one of the SmartThings apps 
 <tr>
 </table>
 
+
 <?php
 require('footeri.php');
  ?>
