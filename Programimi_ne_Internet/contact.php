@@ -30,7 +30,8 @@
    var d = new Date();
    document.getElementById("demo").innerHTML = d;
    </script>
-  
+   	      
+
                </body>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -148,7 +149,6 @@
    setInterval(updateBackground, 1000 * 60);
    updateBackground();
      </script>
-
 
   <footer >
   <?php
