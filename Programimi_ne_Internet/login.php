@@ -1,3 +1,40 @@
+<?php
+require_once('dbconfig.php');
+
+ ?>
+ <?php
+ if (isset($_POST['signup'])) {
+
+     $email=$_POST['email'];
+     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+       $username=$_POST['username'];
+       $sql_u = "SELECT * FROM signup WHERE username='" .str_replace("'","\'",$username)."'";
+         $rezultati = $db->query($sql_u);
+       if ($rezultati->rowCount()>0) {
+         echo '<script>alert("Sorry.This username is taken!")</script>';
+       }
+       else {
+       $password=$_POST['password'];
+       $password=md5($password);
+       $sql="INSERT INTO signup(email,username,password) VALUES(?,?,?)";
+       $stmtInsert=$db->prepare($sql);
+       $result=$stmtInsert->execute([$email,$username,$password]);
+       if ($result) {
+         echo '<script>alert("Registration done!")</script>';
+         $_SESSION["username"] = $_POST["username"];
+         header("location:indexi.php");
+       }
+       else {
+         echo "There were errors while saving the data.";
+       }}
+
+     }
+     else {echo '<script>alert("That is not a valid email address")</script>';
+     }
+ }
+
+  ?>
+
 <!DOCTYPE html>
 <html >
 <head>
@@ -5,9 +42,10 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/projekti.css">
-
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 	<div id="map"></div>
     <script>
@@ -286,11 +324,15 @@ function startWorker() {
         <a id="register" href="#register">Register</a>
         <div></div>
       </div>
+			<div class="">
+
+
+			</div>
       <div class="tabs">
-        <form>
+        <form action="login.php" method="post">
           <div class="inputs">
             <div class="input">
-              <input placeholder="Username" name="username" type="text" value="<?php
+              <input placeholder="Username" required name="username" type="text" value="<?php
               if ($_SERVER["REQUEST_METHOD"] == "POST")
               {
               if (isset($_POST['wEmail'])) {
@@ -302,7 +344,7 @@ function startWorker() {
               <img src="img/user.svg">
             </div>
             <div class="input">
-              <input placeholder="Password" name="password" type="password">
+              <input placeholder="Password" required name="password" type="password">
               <img src="img/pass.svg">
             </div>
             <label class="checkbox">
@@ -313,10 +355,10 @@ function startWorker() {
             <input id="subb" type="submit" 	 name="login" value="Log In">
 
         </form>
-        <form>
+        <form action="login.php" method="post">
           <div class="inputs">
             <div class="input">
-              <input placeholder="Email" type="email" name="email" value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST")
+              <input placeholder="Email" type="text" required name="email" value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST")
               {
                 if (isset($_POST['wEmail'])) {
                   $email=$_POST['wEmail'];
@@ -326,7 +368,8 @@ function startWorker() {
               <img src="img/mail.svg">
             </div>
             <div class="input">
-              <input placeholder="Username" name="username" type="text" value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST")
+
+              <input placeholder="Username" name="username" type="text" required value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST")
               {
                 if (isset($_POST['wEmail'])) {
                   $email=$_POST['wEmail'];
@@ -337,7 +380,7 @@ function startWorker() {
               <img src="img/user.svg">
             </div>
             <div class="input">
-              <input placeholder="Password" type="password" name="password">
+              <input placeholder="Password" required type="password" name="password">
               <img src="img/pass.svg">
             </div>
           </div>
