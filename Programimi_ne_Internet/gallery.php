@@ -54,7 +54,7 @@ $(document).ready(function(){
 		left: 38%;
 		top: 550px;
 		transform:translate(-250%,230%);
-		background-image:url('images/otherimages/4.jpg');
+		background-image:url('images/techSliderimages/6.jpg');
 		background-size: 100% 100%;
 		box-shadow: 1px 2px 10px 10px black;
 		animation:slider2 9s infinite linear;
@@ -68,7 +68,7 @@ $(document).ready(function(){
 		left: 45.5%;
 		top: 550px;
 		transform:translate(-120%,230%);
-		background-image:url('images/otherimages/5.jpg');
+		background-image:url('images/techSliderimages/6.jpg');
 		background-size: 100% 100%;
 		box-shadow: 1px 2px 10px 10px black;
 		animation:slider 9s infinite linear;
@@ -82,7 +82,7 @@ $(document).ready(function(){
 		top: 550px;
 		transform:translate(10%,230%);
 
-		background-image:url('images/otherimages/6.jpg');
+		background-image:url('images/techSliderimages/6.jpg');
 		background-size: 100% 100%;
 		box-shadow: 1px 2px 10px 10px black;
 		animation:slider 9s infinite linear;
@@ -95,7 +95,7 @@ $(document).ready(function(){
 		left: 61%;
 		transform:translate(140%,230%);
 		top: 550px;
-		background-image:url('images/otherimages/7.jpg');
+		background-image:url('images/techSliderimages/6.jpg');
 		background-size: 100% 100%;
 		box-shadow: 1px 2px 10px 10px black;
 		animation:slider2 9s infinite linear;
@@ -109,7 +109,7 @@ $(document).ready(function(){
 		left: 38%;
 		top: -175px;
 		transform:translate(-250%,230%);
-		background-image:url('images/otherimages/4.jpg');
+		background-image:url('images/techSliderimages/6.jpg');
 		background-size: 100% 100%;
 		box-shadow: 1px 2px 10px 10px black;
 		animation:slider1 9s infinite linear;
@@ -124,7 +124,7 @@ $(document).ready(function(){
 		left: 60.7%;
 		transform:translate(140%,230%);
 		top: -175px;
-		background-image:url('images/otherimages/7.jpg');
+		background-image:url('images/techSliderimages/6.jpg');
 		background-size: 100% 100%;
 		box-shadow: 1px 2px 10px 10px black;
 		animation:slider1 9s infinite linear;
@@ -343,7 +343,7 @@ $(document).ready(function(){
 		{
 			width: 230px;
 			height: 230px;
-			border:2px darkorange;
+			border:2px white;
 			border-style: dotted;
 			border-radius: 35%;
 			bottom: 52%;
@@ -357,7 +357,7 @@ $(document).ready(function(){
 		{
 			width: 230px;
 			height: 230px;
-			border:2px darkorange;
+			border:2px white;
 			border-style: dotted;
 			border-radius: 35%;
 			bottom: 12%;
@@ -370,7 +370,7 @@ $(document).ready(function(){
 		{
 			width: 230px;
 			height: 230px;
-			border:2px darkorange;
+			border:2px white;
 			border-style: dotted;
 			border-radius: 35%;
 			bottom: 42%;
@@ -383,7 +383,7 @@ $(document).ready(function(){
 		{
 			width: 230px;
 			height: 230px;
-			border:2px darkorange;
+			border:2px white;
 			border-style: dotted;
 			border-radius: 35%;
 			bottom: 21%;
@@ -396,7 +396,7 @@ $(document).ready(function(){
 		{
 			width: 230px;
 			height: 230px;
-			border:2px darkorange;
+			border:2px white;
 			border-style: dotted;
 			border-radius: 35%;
 			bottom: 33%;
@@ -409,7 +409,7 @@ $(document).ready(function(){
 		{
 			width: 230px;
 			height: 230px;
-			border:2px darkorange;
+			border:2px white;
 			border-style: dotted;
 			border-radius: 35%;
 			bottom: 52%;
@@ -422,7 +422,7 @@ $(document).ready(function(){
 		{
 			width: 230px;
 			height: 230px;
-			border:2px darkorange;
+			border:2px white;
 			border-style: dotted;
 			border-radius: 35%;
 			bottom: 12%;
@@ -435,7 +435,7 @@ $(document).ready(function(){
 		{
 			width: 230px;
 			height: 230px;
-			border:2px darkorange;
+			border:2px white;
 			border-style: dotted;
 			border-radius: 35%;
 			bottom: 42%;
@@ -448,7 +448,7 @@ $(document).ready(function(){
 		{
 			width: 230px;
 			height: 230px;
-			border:2px darkorange;
+			border:2px white;
 			border-style: dotted;
 			border-radius: 35%;
 			bottom: 21%;
@@ -461,7 +461,7 @@ $(document).ready(function(){
 		{
 			width: 230px;
 			height: 230px;
-			border:2px darkorange;
+			border:2px white;
 			border-style: dotted;
 			border-radius: 35%;
 			bottom: 33%;
@@ -708,7 +708,7 @@ $(document).ready(function(){
 
    	 width: 380px;
 	 height: 480px;
-   	background-color: #F58B5E;
+   	background-color: lightblue;
 	margin-top: 20px;
    	margin-right: 1em;
 	margin-left: 1em;
@@ -738,8 +738,8 @@ $(document).ready(function(){
     h3.firsttitle
     {
     	margin-top: 5px;
-    	font-size: 25px;
-    	margin-bottom: 30px;
+    	font-size: 21px;
+    	margin-bottom: 40px;
     }
     /* pjesa e fakteve me orange color*/
 
@@ -919,23 +919,23 @@ $(document).ready(function(){
 		/* pjesa e 4 fotove poshte me slider*/
 	@keyframes slider
 	{
-		0% { background-image: url('images/otherimages/1.jpg');}
-		35% { background-image: url('images/otherimages/8.jpg');  }
-		75% {background-image: url('images/otherimages/3.jpg'); }
+		0% { background-image: url('images/techSliderimages/1.jpg');}
+		35% { background-image: url('images/techSliderimages/2.jpg');  }
+		75% {background-image: url('images/techSliderimages/3.jpg'); }
 
 	}
 	@keyframes slider1
 	{
-		0% { background-image: url('images/otherimages/4.jpg');}
-		35% { background-image: url('images/otherimages/5.jpg');  }
-		75% {background-image: url('images/otherimages/6.jpg'); }
+		0% { background-image: url('images/techSliderimages/4.jpg');}
+		35% { background-image: url('images/techSliderimages/5.jpg');  }
+		75% {background-image: url('images/techSliderimages/6.jpg'); }
 
 	}
 	@keyframes slider2
 	{
-		0% { background-image: url('images/otherimages/4.jpg');}
-		35% { background-image: url('images/otherimages/5.jpg');  }
-		75% {background-image: url('images/otherimages/6.jpg'); }
+		0% { background-image: url('images/techSliderimages/4.jpg');}
+		35% { background-image: url('images/techSliderimages/5.jpg');  }
+		75% {background-image: url('images/techSliderimages/6.jpg'); }
 
 	}
 	/* fund */
@@ -1045,50 +1045,50 @@ $(document).ready(function(){
 			<div class="permbajtja-1">
 				    <figure class="shadow">
                     <a href="images/imagesofnature/1large.jpg">
-                        <img src="images/imagesofnature/1.jpg">
+                        <img src="images/techimages/1.jpg">
                     </a>
                 </figure>
                 <figure class="shadow">
                     <a href="images/imagesofnature/2large.jpg">
-                        <img src="images/imagesofnature/2.jpg">
+                        <img src="images/techimages/2.jpg">
                     </a>
                 </figure>
                 <figure class="shadow">
                     <a href="images/imagesofnature/3large.jpg">
-                        <img src="images/imagesofnature/3.jpg">
+                        <img src="images/techimages/3.jpg">
                     </a>
                 </figure>
                 <figure class="shadow">
-                    <a href="images/imagesofnature/4large.jpg">
-                        <img src="images/imagesofnature/4.jpg">
+                    <a href="images/imagesofnature/large.jpg">
+                        <img src="images/techimages/8.jpg">
                     </a>
                 </figure>
                 <figure class="shadow">
                     <a href="images/imagesofnature/5large.jpg">
-                        <img src="images/imagesofnature/5.jpg">
+                        <img src="images/techimages/5.jpg">
                     </a>
                 </figure>
                 <figure class="shadow">
                     <a href="images/imagesofnature/6large.jpg">
-                        <img src="images/imagesofnature/6.jpg">
+                        <img src="images/techimages/6.jpg">
                     </a>
                 </figure>
                 <figure class="shadow">
                     <a href="images/imagesofnature/7large.jpg">
-                        <img src="images/imagesofnature/7.jpg">
+                        <img src="images/techimages/7.jpg">
 
                     </a>
 
                 </figure>
                 <figure class="shadow">
                     <a href="images/imagesofnature/8large.jpg">
-                        <img src="images/imagesofnature/8.jpg">
+                        <img src="images/techimages/4.jpg">
                     </a>
 
                 </figure>
                 <figure class="shadow">
                     <a href="images/imagesofnature/9large.jpg">
-                        <img src="images/imagesofnature/9.jpg">
+                        <img src="images/techimages/9.jpg">
                     </a>
 
 
@@ -1100,30 +1100,31 @@ $(document).ready(function(){
 
 
 		<div class="photo">
-			<img src="images/imagesofupdown/1.jpg">
-			<img src="images/imagesofupdown/2.jpg">
-			<img src="images/imagesofupdown/3.jpg">
-			<img src="images/imagesofupdown/4.jpg">
-			<img src="images/imagesofupdown/5.jpg">
-			<img src="images/imagesofupdown/6.jpg">
-			<img src="images/imagesofupdown/7.jpg">
-			<img src="images/imagesofupdown/8.jpg">
-			<img src="images/imagesofupdown/9.jpg">
+			<img src="images/techimages/1.jpg">
+			<img src="images/techimages/2.jpg">
+			<img src="images/techimages/3.jpg">
+			<img src="images/techimages/4.jpg">
+			<img src="images/techimages/5.jpg">
+			<img src="images/techimages/6.jpg">
+			<img src="images/techimages/7.jpg">
+			<img src="images/techimages/8.jpg">
+			<img src="images/techimages/9.jpg">
 
 		</div>
 		<div class="photo1">
-			<img src="images/imagesofupdown/11.jpg">
-			<img src="images/imagesofupdown/12.jpg">
-			<img src="images/imagesofupdown/13.jpg">
-			<img src="images/imagesofupdown/14.jpg">
-			<img src="images/imagesofupdown/15.jpg">
-			<img src="images/imagesofupdown/16.jpg">
-			<img src="images/imagesofupdown/17.jpg">
-			<img src="images/imagesofupdown/18.jpg">
-			<img src="images/imagesofupdown/19.jpg">
+			<img src="images/techimages/1.jpg">
+			<img src="images/techimages/2.jpg">
+			<img src="images/techimages/3.jpg">
+			<img src="images/techimages/4.jpg">
+			<img src="images/techimages/5.jpg">
+			<img src="images/techimages/6.jpg">
+			<img src="images/techimages/7.jpg">
+			<img src="images/techimages/8.jpg">
+			<img src="images/techimages/9.jpg">
 
 		</div>
 
+			
 	</section>
 		<div class="footer">
 		<table class="tabelanefund">
@@ -1132,40 +1133,40 @@ $(document).ready(function(){
 				<td>
 					<div class="tedhenat">
 
-						<h3 class="firsttitle">First Snapshot</h3>
+						<h3 class="firsttitle">Technology facts you could never heard.</h3>
 
-					<img src="images/otherimages/oldimage.jpg" width="320px" height="180px" align="center" class="firstphoto">
+					<img src="images/techFact/1.jpg" width="320px" height="180px" align="center" class="firstphoto">
 
-					 <p class="firstperson">The first person who managed to
-make a “photographic” snapshot constant, that is to fix the image was
-Joseph Niepce. The very first snapshot in the history of photography is
-considered “view from the window,” dated 1826. The exposure of the
-shot lasted 8 Hours. That’s the picture above.
+					 <p class="firstperson">Over 3.8 billion people use the internet today, which is 40% of the world's population.
+					 8 billion devices will be connected to the internet by 2020.More than 570 new websites are created every minute.There are over 3.5 billion searches per day on Google.
 </p>
 				</div>
 				</td>
 				<td>
 					<div class="tedhenat">
-						<h3 class="firsttitle">First Photo Taken</h3>
+						<h3 class="firsttitle">Alexa is always listening to your conversations.</h3>
 
-					<img src="images/otherimages/oldimage1.jpg" width="320px" height="180px" align="center" class="firstphoto">
+					<img src="images/techFact/2.jpeg" width="320px" height="180px" align="center" class="firstphoto">
 
-					 <p class="firstperson">He is the first person to ever have his photograph taken and it was an accident. It is believed he was getting his shoes cleaned, which is why he stayed still long enough for his photograph to be taken.He is the first person to ever have his photograph taken and it was an accident. It is believed he was getting his shoes cleaned, which is why he stayed still long enough for his photograph to be taken.
+					 <p class="firstperson">
+					 This probably isn’t new to you. Siri has been doing it forever.
+					 Alexa stores your dialogue history to its cloud to help improve your Alexa experience.But, you can review and delete these recordings, either in bulk, or individually.
 </p>
 					</div>
 
 				</td>
 				<td>
 					<div class="tedhenat">
-						<h3 class="firsttitle"> Mini-Explosions
+						<h3 class="firsttitle"> Computer Security Day is celebrated on November 30th.
 </h3>
 
-					<img src="images/otherimages/oldimage2.jpg" width="320px" height="180px" align="center" class="firstphoto">
+					<img src="images/techFact/3.jpg" width="320px" height="180px" align="center" class="firstphoto">
 
 					 <p class="firstperson">
-					 The First Flashes Were Mini-Explosions .<br>
-					 This is a modern-day presentation of the original mix of potassium chloride and aluminum that created the first flashes.<br>
-					Unfortunately, when you mix potassium chloride and aluminum incorrectly, you get a huge explosion.</p>
+					 
+					 It was started in 1988 to help raise the awareness of computer related security issues.
+					To celebrate Computer Security Day is easy, and important – check your privacy settings on Facebook, change your passwords to something stronger.
+					</p>
 					</div>
 				</td>
 			</tr>
