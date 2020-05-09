@@ -485,6 +485,7 @@ $(document).ready(function(){
 
     }
 
+	
     h2
     {
       font-size: 2em;
@@ -493,6 +494,7 @@ $(document).ready(function(){
       padding-left: 190px;
       padding-top: 200px;
     }
+	
     h2 span
     {
         animation: animate 1s linear infinite;
@@ -708,7 +710,10 @@ $(document).ready(function(){
 
    	 width: 380px;
 	 height: 480px;
-   	background-color: lightblue;
+	 background-color : lightblue;
+	 color : black;
+   	background-color: <?php if(isset($_GET["sub"])) {echo $_GET["txt1"];} ?>;
+	color:<?php if(isset($_GET["sub"])) {echo $_GET["txt2"];} ?>;
 	margin-top: 20px;
    	margin-right: 1em;
 	margin-left: 1em;
@@ -716,7 +721,6 @@ $(document).ready(function(){
 	padding: 1em;
 	margin-left: 2em;
 	margin-right: 2em;
-	color: black;
 	text-align: center;
 
 
@@ -754,7 +758,7 @@ $(document).ready(function(){
     	text-align: center;
     	margin-right: 1px;
     	margin-left: 150px;
-    	margin-top: 150px;
+    	margin-top: 50px;
 
     }
     h3.butoni1
@@ -885,7 +889,16 @@ $(document).ready(function(){
 
     }
     /* ketu mbaron pjesa e tabelave me buttona*/
-
+	form#f{
+		margin-top:2em;
+		padding:2em;
+		padding-left:28em;
+		color:lightblue;
+	}
+	input#ss{
+		padding-left:.5em;
+		padding-right:.5em;
+	}
      @keyframes animate
     {
       0%,80%
@@ -1171,6 +1184,18 @@ $(document).ready(function(){
 				</td>
 			</tr>
 		</table>
+<div>
+  <form id="f">
+    <label for="fname">Background-Color : </label>
+    <input type="text" id="fname" name="txt1" placeholder="Any color..">
+
+    <label for="lname">Text Color :</label>
+    <input type="text" id="lname" name="txt2" placeholder="Any color..">
+
+  
+    <input id="ss" type="submit" value="submit" name="sub"/>
+  </form>
+</div>
 	<table>
 		<tr>
 			<td >
@@ -1218,6 +1243,9 @@ $(document).ready(function(){
 
 		</tr>
 	</table>
+
+	
+
 
 
 
