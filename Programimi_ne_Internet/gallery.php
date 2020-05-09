@@ -901,10 +901,11 @@ $(document).ready(function(){
 	}
 	h2#inherit 
 	{
+
 		padding-top:20px;
-		font-size:20px;
-		padding-left:59em;
-		color:black;
+		font-size:16px;
+		padding-left:58em;
+		color:white;
 	} 
      @keyframes animate
     {
@@ -1253,8 +1254,19 @@ $(document).ready(function(){
 
 	<h2 id="inherit">	
 <?php require('inheritance.php'); ?>
-	</h2>
+<form action="WriteToFile.php" method="POST">
+<br>Give us advices :
+    <input name="field1" type="text" />
+    <input type="submit" name="submit" value="Send">
+</form>
+<form action="readToFile.php" method="POST">
+<br>
+	Read the advices :
+    <input type="submit" name="submit" value="Read" >
+</form>
 
+
+	</h2>
 
 
 
