@@ -899,6 +899,13 @@ $(document).ready(function(){
 		padding-left:.5em;
 		padding-right:.5em;
 	}
+	h2#inherit 
+	{
+		padding-top:20px;
+		font-size:20px;
+		padding-left:59em;
+		color:black;
+	} 
      @keyframes animate
     {
       0%,80%
@@ -1244,7 +1251,9 @@ $(document).ready(function(){
 		</tr>
 	</table>
 
-	
+	<h2 id="inherit">	
+<?php require('inheritance.php'); ?>
+	</h2>
 
 
 
