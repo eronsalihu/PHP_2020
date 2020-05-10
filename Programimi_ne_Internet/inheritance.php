@@ -27,11 +27,11 @@
         }
         public function getDept()
         {
-            echo "<br> Dept No: ".$this->deptNo." Dept Name: ".$this->deptName;
+            echo "<br> Dept No:".$this->deptNo."   Dept Name: ".$this->deptName;
         }
 
     }
-    $objDept = new dept("Wiil", "Shkodra", 5, "FIEK");
+    $objDept = new dept("Computer", "Engineering", 5, "FIEK");
     $objDept->getFullName();
     $objDept->getDept();
 ?>
