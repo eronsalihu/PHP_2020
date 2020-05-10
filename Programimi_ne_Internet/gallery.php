@@ -1,3 +1,4 @@
+<?php session_start(); ?> 
 <?php require('headeri.php'); ?>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="jquery-1.11.2.min.js"></script>
@@ -1264,7 +1265,8 @@ $(document).ready(function(){
 	Read the advices :
     <input type="submit" name="submit" value="Read" >
 </form>
-
+<br>
+<?php require('personNumber.php'); ?>
 
 	</h2>
 
