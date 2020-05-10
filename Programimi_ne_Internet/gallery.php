@@ -1066,50 +1066,50 @@ $(document).ready(function(){
 		<div class="permbajtja">
 			<div class="permbajtja-1">
 				    <figure class="shadow">
-                    <a href="images/imagesofnature/1large.jpg">
+                    <a href="images/techBigImages/1large.jpg">
                         <img src="images/techimages/1.jpg">
                     </a>
                 </figure>
                 <figure class="shadow">
-                    <a href="images/imagesofnature/2large.jpg">
+                    <a href="images/techBigImages/2large.jpg">
                         <img src="images/techimages/2.jpg">
                     </a>
                 </figure>
                 <figure class="shadow">
-                    <a href="images/imagesofnature/3large.jpg">
+                    <a href="images/techBigImages/3large.jpg">
                         <img src="images/techimages/3.jpg">
                     </a>
                 </figure>
                 <figure class="shadow">
-                    <a href="images/imagesofnature/large.jpg">
+                    <a href="images/techBigImages/large.jpg">
                         <img src="images/techimages/8.jpg">
                     </a>
                 </figure>
                 <figure class="shadow">
-                    <a href="images/imagesofnature/5large.jpg">
+                    <a href="images/techBigImages/5large.jpg">
                         <img src="images/techimages/5.jpg">
                     </a>
                 </figure>
                 <figure class="shadow">
-                    <a href="images/imagesofnature/6large.jpg">
+                    <a href="images/techBigImages/6large.jpg">
                         <img src="images/techimages/6.jpg">
                     </a>
                 </figure>
                 <figure class="shadow">
-                    <a href="images/imagesofnature/7large.jpg">
+                    <a href="images/techBigImages/7large.jpg">
                         <img src="images/techimages/7.jpg">
 
                     </a>
 
                 </figure>
                 <figure class="shadow">
-                    <a href="images/imagesofnature/8large.jpg">
+                    <a href="images/techBigImages/8large.jpg">
                         <img src="images/techimages/4.jpg">
                     </a>
 
                 </figure>
                 <figure class="shadow">
-                    <a href="images/imagesofnature/9large.jpg">
+                    <a href="images/techBigImages/9large.jpg">
                         <img src="images/techimages/9.jpg">
                     </a>
 
