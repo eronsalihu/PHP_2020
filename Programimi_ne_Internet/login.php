@@ -1,6 +1,5 @@
 <?php
-require_once('dbconfig.php');
-
+require('dbconfig.php');
  ?>
  <?php
  if (isset($_POST['signup'])) {
@@ -8,9 +7,11 @@ require_once('dbconfig.php');
      $email=$_POST['email'];
      if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
        $username=$_POST['username'];
-       $sql_u = "SELECT * FROM signup WHERE username='" .str_replace("'","\'",$username)."'";
-         $rezultati = $db->query($sql_u);
-       if ($rezultati->rowCount()>0) {
+       $query = "Select * from signup where username =:username";
+       $stmt=$db->prepare($query);
+       $stmt->bindParam(":username",$username);
+       $stmt->execute();
+          if ($result=$stmt->fetch(PDO::FETCH_OBJ)) {
          echo '<script>alert("Sorry.This username is taken!")</script>';
        }
        else {
@@ -18,11 +19,12 @@ require_once('dbconfig.php');
        $password=md5($password);
        $sql="INSERT INTO signup(email,username,password) VALUES(?,?,?)";
        $stmtInsert=$db->prepare($sql);
+
        $result=$stmtInsert->execute([$email,$username,$password]);
        if ($result) {
          echo '<script>alert("Registration done!")</script>';
          $_SESSION["username"] = $_POST["username"];
-         header("location:indexi.php");
+         header("location:login_success.php");
        }
        else {
          echo "There were errors while saving the data.";
@@ -33,7 +35,50 @@ require_once('dbconfig.php');
      }
  }
 
+ if(isset($_POST["login"]))
+     {
+       $username=$_POST['username'];
+       $password=$_POST['password'];
+       $password=md5($password);
+
+
+          if(empty($_POST["username"]) || empty($_POST["password"]))
+          {
+               $message = '<label>All fields are required</label>';
+          }
+          else
+          {
+            $query = "Select * from signup where username =:username  and password =:password";
+            $stmt=$db->prepare($query);
+            $stmt->bindParam(":username",$username);
+            $stmt->bindParam(":password",$password);
+            $stmt->execute();
+
+               if ($result=$stmt->fetch(PDO::FETCH_OBJ)) {
+                  if (!empty($_POST['checkbox'])) {
+                    setcookie("username",$username,time()+(10*365*24*60*60));
+                    setcookie("password",$_POST['password'],time()+(10*365*24*60*60));
+                  }
+                  else {
+                    if (isset($_COOKIE['username'])) {
+                      setcookie("username","");
+                    }
+                    if (isset($_COOKIE['password'])) {
+                      setcookie("password","");
+                    }
+                  }
+                    $_SESSION["username"] = $_POST["username"];
+                    header("location:login_success.php");
+               }
+               else
+               {
+
+                    echo "<script>alert('Wrong username or password $password')</script>";
+               }
+          }
+     }
   ?>
+
 
 <!DOCTYPE html>
 <html >
@@ -325,15 +370,16 @@ function startWorker() {
         <div></div>
       </div>
 			<div class="">
-
-
 			</div>
       <div class="tabs">
         <form action="login.php" method="post">
           <div class="inputs">
             <div class="input">
               <input placeholder="Username" required name="username" type="text" value="<?php
-              if ($_SERVER["REQUEST_METHOD"] == "POST")
+              if (isset($_COOKIE['username'])) {
+                echo $_COOKIE['username'];
+              }
+          else if ($_SERVER["REQUEST_METHOD"] == "POST")
               {
               if (isset($_POST['wEmail'])) {
                 $email=$_POST['wEmail'];
@@ -344,11 +390,15 @@ function startWorker() {
               <img src="img/user.svg">
             </div>
             <div class="input">
-              <input placeholder="Password" required name="password" type="password">
+              <input placeholder="Password" required name="password" type="password" value="<?php if (isset($_COOKIE['password'])) {
+                echo $_COOKIE['password'];
+              } ?>">
               <img src="img/pass.svg">
             </div>
             <label class="checkbox">
-              <input type="checkbox" name="checkbox">
+              <input type="checkbox" name="checkbox" <?php if (isset($_COOKIE['username'])) {
+                // code...
+               ?>checked <?php } ?>>
               <span>Remember me</span>
             </label>
           </div>
@@ -397,6 +447,7 @@ function startWorker() {
     document.write(new Date().getFullYear());
   </script>
   </div>
+
   </footer>
 
 <script src="js/jquery-3.3.1.min.js"></script>
