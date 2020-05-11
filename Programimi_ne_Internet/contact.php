@@ -2,9 +2,30 @@
   <?php
   require('headeri.php');
    ?>
+   <?php
+   if(isset($_POST['submit'])){
+     $name=$_POST['name'];
+     $mailFrom=$_POST['email'];
+     $subject=$_POST['subject'];
+     $msg=$_POST['message'];
+     if (!filter_var($mailFrom, FILTER_VALIDATE_EMAIL)) {
+     			$emailError = 'Invalid email';
+     		}
+        else {
+    $to="enis.berisha7@student.uni-pr.edu";
+    $message="From: ".$name." \n\n Message:".$msg;
+    $headers="From: ".$mailFrom;
+    if(mail($mailto,$subject,$message,$headers))   {
+      echo '<script>alert("Email sent succesfully.Thank you!We will contact you shortly.")</script>';
+    }
+  else {
+    echo '<script>alert("Something went Wrong!")</script>';
+  } }
+   }
+    ?>
    <div class="none">
     <div class="innerdivv" style="margin-left: 1em;">
-           	<form id="contactForm" action="mailto:info@smartapp.com" method="post" enctype="text/plain">
+           	<form id="contactForm" action="contact.php" method="post" enctype="text/plain">
            		Name:<br>
            		<input type="text" name="name" required="" id="firstName" class="form-control"><br><br>
                <button type="button" class="save" id="signupi">Save Name</button>
@@ -22,7 +43,7 @@
            		<div>Characters left:<span id="char-left"></span></div>
            		Accept Terms and Conditions:<br>
            		<input type="checkbox" name="terms" class="form-control" size="50"><br><br>
-           		<input type="submit" class="form-control submit" value="Send">
+           		<input type="submit"  name="sub" class="form-control submit" value="Send">
    	     	</form>
    		    </div>
 
@@ -30,7 +51,7 @@
    var d = new Date();
    document.getElementById("demo").innerHTML = d;
    </script>
-   	      
+
 
                </body>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
