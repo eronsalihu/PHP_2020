@@ -1,4 +1,4 @@
-<?php 
+<?php
     class employee {
         protected $fname;
         protected $lname;
@@ -25,6 +25,18 @@
             $this->deptNo = $deptNumber;
             $this->deptName = $departName;
         }
+        public function setDeptNo($deptNo){
+         $this->deptNo = $deptNo;
+      }
+      public function getDeptNo(){
+         return  $this->deptNo;
+      }
+      public function setDeptName($deptName){
+         $this->deptName = $deptName;
+      }
+      public function getDeptName(){
+         return  $this->deptName;
+      }
         public function getDept()
         {
             echo "<br> Dept No: ".$this->deptNo." Dept Name: ".$this->deptName;
