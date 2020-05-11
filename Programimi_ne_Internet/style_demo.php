@@ -1,4 +1,5 @@
 <?php require('headeri.php'); ?>
+
 <script>
 $(document).ready(function(){
   $("button").click(function(){
@@ -217,6 +218,8 @@ p.pp{
 }
 
   </style>
+    <body onload="startGame()">
+
   <div class="fotoja1">
   <div class="butonat">
 
@@ -324,6 +327,15 @@ Finally, use the Google Assistant, Amazon Alexa, or one of the SmartThings apps 
 <tr>
 </table>
 
+<!-- Loja -->
+ <div style="width:100%; text-align:center; padding-left: 30em;
+ padding-top: 2em;margin-bottom: 1em;">
+        <canvas id="canvas" width="400" height="340"
+                style="display:inline;
+                 background:-webkit-linear-gradient( #1f4353,#ffffff,#123245);
+                border:1px solid  #454545  ">
+        </canvas>
+    </div>
 
 <?php
 require('footeri.php');
