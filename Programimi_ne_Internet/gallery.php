@@ -485,7 +485,7 @@ $(document).ready(function(){
 
     }
 
-	
+
     h2
     {
       font-size: 2em;
@@ -494,7 +494,7 @@ $(document).ready(function(){
       padding-left: 190px;
       padding-top: 200px;
     }
-	
+
     h2 span
     {
         animation: animate 1s linear infinite;
@@ -899,13 +899,13 @@ $(document).ready(function(){
 		padding-left:.5em;
 		padding-right:.5em;
 	}
-	h2#inherit 
+	h2#inherit
 	{
 		padding-top:20px;
 		font-size:20px;
 		padding-left:59em;
 		color:black;
-	} 
+	}
      @keyframes animate
     {
       0%,80%
@@ -1144,7 +1144,7 @@ $(document).ready(function(){
 
 		</div>
 
-			
+
 	</section>
 		<div class="footer">
 		<table class="tabelanefund">
@@ -1183,7 +1183,7 @@ $(document).ready(function(){
 					<img src="images/techFact/3.jpg" width="320px" height="180px" align="center" class="firstphoto">
 
 					 <p class="firstperson">
-					 
+
 					 It was started in 1988 to help raise the awareness of computer related security issues.
 					To celebrate Computer Security Day is easy, and important – check your privacy settings on Facebook, change your passwords to something stronger.
 					</p>
@@ -1199,7 +1199,7 @@ $(document).ready(function(){
     <label for="lname">Text Color :</label>
     <input type="text" id="lname" name="txt2" placeholder="Any color..">
 
-  
+
     <input id="ss" type="submit" value="submit" name="sub"/>
   </form>
 </div>
@@ -1251,7 +1251,7 @@ $(document).ready(function(){
 		</tr>
 	</table>
 
-	<h2 id="inherit">	
+	<h2 id="inherit">
 <?php require('inheritance.php'); ?>
 	</h2>
 
