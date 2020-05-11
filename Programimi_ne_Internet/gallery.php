@@ -1,3 +1,4 @@
+<?php session_start(); ?> 
 <?php require('headeri.php'); ?>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="jquery-1.11.2.min.js"></script>
@@ -901,11 +902,19 @@ $(document).ready(function(){
 	}
 	h2#inherit
 	{
+
 		padding-top:20px;
+<<<<<<< HEAD
 		font-size:20px;
 		padding-left:59em;
 		color:black;
 	}
+=======
+		font-size:16px;
+		padding-left:58em;
+		color:white;
+	} 
+>>>>>>> a54a9a235c0dc1bbe9dd2e158f64d6837170a1ce
      @keyframes animate
     {
       0%,80%
@@ -1064,50 +1073,50 @@ $(document).ready(function(){
 		<div class="permbajtja">
 			<div class="permbajtja-1">
 				    <figure class="shadow">
-                    <a href="images/imagesofnature/1large.jpg">
+                    <a href="images/techBigImages/1large.jpg">
                         <img src="images/techimages/1.jpg">
                     </a>
                 </figure>
                 <figure class="shadow">
-                    <a href="images/imagesofnature/2large.jpg">
+                    <a href="images/techBigImages/2large.jpg">
                         <img src="images/techimages/2.jpg">
                     </a>
                 </figure>
                 <figure class="shadow">
-                    <a href="images/imagesofnature/3large.jpg">
+                    <a href="images/techBigImages/3large.jpg">
                         <img src="images/techimages/3.jpg">
                     </a>
                 </figure>
                 <figure class="shadow">
-                    <a href="images/imagesofnature/large.jpg">
+                    <a href="images/techBigImages/large.jpg">
                         <img src="images/techimages/8.jpg">
                     </a>
                 </figure>
                 <figure class="shadow">
-                    <a href="images/imagesofnature/5large.jpg">
+                    <a href="images/techBigImages/5large.jpg">
                         <img src="images/techimages/5.jpg">
                     </a>
                 </figure>
                 <figure class="shadow">
-                    <a href="images/imagesofnature/6large.jpg">
+                    <a href="images/techBigImages/6large.jpg">
                         <img src="images/techimages/6.jpg">
                     </a>
                 </figure>
                 <figure class="shadow">
-                    <a href="images/imagesofnature/7large.jpg">
+                    <a href="images/techBigImages/7large.jpg">
                         <img src="images/techimages/7.jpg">
 
                     </a>
 
                 </figure>
                 <figure class="shadow">
-                    <a href="images/imagesofnature/8large.jpg">
+                    <a href="images/techBigImages/8large.jpg">
                         <img src="images/techimages/4.jpg">
                     </a>
 
                 </figure>
                 <figure class="shadow">
-                    <a href="images/imagesofnature/9large.jpg">
+                    <a href="images/techBigImages/9large.jpg">
                         <img src="images/techimages/9.jpg">
                     </a>
 
@@ -1253,8 +1262,20 @@ $(document).ready(function(){
 
 	<h2 id="inherit">
 <?php require('inheritance.php'); ?>
-	</h2>
+<form action="WriteToFile.php" method="POST">
+<br>Give us advices :
+    <input name="field1" type="text" />
+    <input type="submit" name="submit" value="Send">
+</form>
+<form action="readToFile.php" method="POST">
+<br>
+	Read the advices :
+    <input type="submit" name="submit" value="Read" >
+</form>
+<br>
+<?php require('personNumber.php'); ?>
 
+	</h2>
 
 
 
