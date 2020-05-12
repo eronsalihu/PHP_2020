@@ -73,7 +73,7 @@ require('dbconfig.php');
                else
                {
 
-                    echo "<script>alert('Wrong username or password $password')</script>";
+                    echo "<script>alert('Wrong username or password!')</script>";
                }
           }
      }
@@ -346,7 +346,7 @@ function startWorker() {
            <li  class="dropdown"><a id="ani"class="dropdbtn" >Dropdown</a>
            	<div class="dropdown-content">
            		<a id="dropdowmia" href="login.php" > LogIn/SignUp</a>
-           		<a id="dropdowmai" href="https://smartapp.io/" target="_blank">Smart App</a>
+           		<a id="dropdowmai" href="subscribe.php" >SUBSCRIBE</a>
            		<a id="dropdowmia" href="https://www.apple.com/ios/app-store/" target="_blank"> App Store</a>
 							<a id="dropdowmia" href="https://play.google.com/" target="_blank">Play Store</a>
            	</div></li>
@@ -397,7 +397,6 @@ function startWorker() {
             </div>
             <label class="checkbox">
               <input type="checkbox" name="checkbox" <?php if (isset($_COOKIE['username'])) {
-                // code...
                ?>checked <?php } ?>>
               <span>Remember me</span>
             </label>
