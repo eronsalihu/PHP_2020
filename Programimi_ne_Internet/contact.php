@@ -2,49 +2,54 @@
   <?php
   require('headeri.php');
    ?>
-   <?php
-   if(isset($_POST['submit'])){
-     $name=$_POST['name'];
-     $mailFrom=$_POST['email'];
-     $subject=$_POST['subject'];
-     $msg=$_POST['message'];
-     if (!filter_var($mailFrom, FILTER_VALIDATE_EMAIL)) {
-     			$emailError = 'Invalid email';
-     		}
-        else {
-    $to="enis.berisha7@student.uni-pr.edu";
-    $message="From: ".$name." \n\n Message:".$msg;
-    $headers="From: ".$mailFrom;
-    if(mail($mailto,$subject,$message,$headers))   {
-      echo '<script>alert("Email sent succesfully.Thank you!We will contact you shortly.")</script>';
-    }
-  else {
-    echo '<script>alert("Something went Wrong!")</script>';
-  } }
-   }
-    ?>
+   <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+   <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+   <script type="text/javascript">
+ function sendMessage() {
+
+       $.ajax({
+           url: "contactform.php",
+           data:'Name='+$("#firstName").val()+'&userEmail='+
+           $("#email").val()+'&subject='+
+           $("#subject").val()+'&content='+
+           $(message).val(),
+           type: "POST",
+           async:true,
+           success: function (data) {
+              console.log(data);
+               $("#mail-status").html(data);
+           },
+           error: function ()
+           {
+               console.log(data);
+           }
+       });
+
+}
+</script>
    <div class="none">
     <div class="innerdivv" style="margin-left: 1em;">
-           	<form id="contactForm" action="contact.php" method="post" enctype="text/plain">
+           	<form id="contactForm" action="contactform.php" method="post" enctype="text/plain">
            		Name:<br>
            		<input type="text" name="name" required="" id="firstName" class="form-control"><br><br>
                <button type="button" class="save" id="signupi">Save Name</button>
          <button type="button" class="access" id="signupi">Get Name</button><br>
 
            		E-mail:<br>
-               <input type="text" name="email"class="form-control" required=""><br>
+               <input type="text" id="email" name="email"class="form-control" required=""><br>
            		Gender:<br>
            		<input type="radio" name="gender"class="form-control" value="female" checked=""> Male
            		<input type="radio" name="gender"class="form-control" value="other"> Female<br>
                Subject:<br>
-           		<input type="text" name="subject" class="form-control" size="20" required=""><br>
+           		<input type="text" id="subject" name="subject" class="form-control" size="20" required=""><br>
            		Message:<br>
            		<textarea name="message" size="500"class="form-control" required=""></textarea><br>
            		<div>Characters left:<span id="char-left"></span></div>
            		Accept Terms and Conditions:<br>
            		<input type="checkbox" name="terms" class="form-control" size="50"><br><br>
-           		<input type="submit"  name="sub" class="form-control submit" value="Send">
+           		<input type="submit"  name="sub" class="form-control submit" value="Send" onclick="sendMessage();">
    	     	</form>
+          <div id="mail-status"></div>
    		    </div>
 
    <script>
