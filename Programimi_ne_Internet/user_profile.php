@@ -1,7 +1,7 @@
  <?php
   require('headeri.php');
    ?>
-   <?php
+
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -18,7 +18,7 @@
 <table>
     <tr>
     <div>
-        
+
         <tr>
           <div class="container">
     <div class="avatar-upload">
@@ -41,7 +41,7 @@
     <table>
         <th> <label>Account Settings</label></th>
         <tr>
-            
+
             <td>
                  <label>Email: </label>
             </td>
@@ -87,7 +87,7 @@
     <span class="fake-radiobutton"></span>
     Female
   </span>
-</label></td> 
+</label></td>
 
         </tr>
         <tr>
@@ -105,7 +105,7 @@
             <td><input class="input" type="text" name=""></td>
 
         </tr>
-        
+
     </table>
 </div>
 <div style="float: right;">
@@ -158,7 +158,7 @@ $("#imageUpload").change(function() {
   display:block;
   position:relative;
   padding:1rem 3.5rem 1rem 0.75rem;
-  
+
   font-size:1rem;
   font-family:monospace;
   color: white;
@@ -171,7 +171,7 @@ $("#imageUpload").change(function() {
     right 1rem
     center
     no-repeat;
-  
+
   cursor:pointer;
 }
 input[type="date"]:focus {
@@ -201,13 +201,13 @@ input[type="date"]:focus {
   top:0;
   right:0;
   bottom:0;
-  
+
   opacity:0;
   cursor:pointer;
-  
+
   color:#E3E2E0;
   background:#1F2531;
- 
+
 }
 
 input[type="date"]:hover::-webkit-calendar-picker-indicator { opacity:0.05; }
