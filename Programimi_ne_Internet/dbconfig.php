@@ -1,4 +1,5 @@
 <?php
+
 $db_user="root";
 $db_pass="E.berisha1";
 $db_name="smartapp";
