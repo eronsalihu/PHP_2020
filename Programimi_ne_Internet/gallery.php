@@ -754,7 +754,7 @@ $(document).ready(function(){
     	height: 180px;
     	width: 500px;
     	border-radius: 90px;
-    	background-color: grey;
+    	background-color: lightblue;
     	color: black;
     	text-align: center;
     	margin-right: 1px;
@@ -890,24 +890,33 @@ $(document).ready(function(){
 
     }
     /* ketu mbaron pjesa e tabelave me buttona*/
+	* {
+ 	 box-sizing: border-box;
+	}
 	form#f{
 		margin-top:2em;
 		padding:2em;
 		padding-left:28em;
 		color:lightblue;
 	}
-	input#ss{
-		padding-left:.5em;
-		padding-right:.5em;
-	}
-	h2#inherit 
-	{
 
-		padding-top:20px;
-		font-size:16px;
-		padding-left:58em;
-		color:white;
-	} 
+	.column {
+		text-align:center;	
+		margin-top:4em;
+		margin-left:6.8em;	
+		float: left;
+		width: 22.33%;
+		padding: 7px;
+		height: 100px; 
+		color:purple;
+	}
+
+	.row:after {
+		text-align:center;	
+		content: "";
+		display: table;
+		clear: both;
+	}
      @keyframes animate
     {
       0%,80%
@@ -1253,9 +1262,15 @@ $(document).ready(function(){
 		</tr>
 	</table>
 
-	<h2 id="inherit">	
-<?php require('inheritance.php'); ?>
-<form action="WriteToFile.php" method="POST">
+
+	<div class="row">
+  <div class="column" style = "background-color:lightgreen;">
+   
+    <p><?php require('inheritance.php'); ?></p>
+  </div>
+  <div class="column" style = "background-color:lightblue;" >
+    
+    <p><form action="WriteToFile.php" method="POST">
 <br>Give us advices :
     <input name="field1" type="text" />
     <input type="submit" name="submit" value="Send">
@@ -1264,13 +1279,12 @@ $(document).ready(function(){
 <br>
 	Read the advices :
     <input type="submit" name="submit" value="Read" >
-</form>
-<br>
-<?php require('personNumber.php'); ?>
-
-	</h2>
-
-
+</form></p>
+  </div>
+  <div class="column" style = "background-color:lightgreen; padding-top:2.2em;">
+  <p><?php require('personNumber.php'); ?></p>
+  </div>
+</div>
 
 <?php
 require('footeri.php'); ?>
