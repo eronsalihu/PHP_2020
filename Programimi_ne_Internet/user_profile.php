@@ -1,7 +1,8 @@
  <?php
-  require('headeri.php');
-   ?>
+    session_start();
+    require('headeri.php');
 
+?>
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -18,7 +19,6 @@
 <table>
     <tr>
     <div>
-
         <tr>
           <div class="container">
     <div class="avatar-upload">
@@ -32,7 +32,10 @@
 
         </div>
     </div>
+
 </div>
+<button style="float: right; background-color: #1F2531; height: 30px;color: white;border: solid 2px #E3E2E0; border-radius: 7px; margin-right: 2em;margin-bottom:">Edit</button>
+
 </tr>
 </div>
 </tr>
@@ -42,11 +45,11 @@
     <table>
         <th> <label>Account Settings</label></th>
         <tr>
-
+        
             <td>
-                 <label>Email: </label>
+                 <br><label>Email: </label>
             </td>
-            <td><input class="input" type="Email" name="" ></td>
+            <td><br><input class="input" type="Email" name="" ></td>
         </tr>
         <tr>
             <td> <label>Username:</label></td>
@@ -62,8 +65,8 @@
             <table>
         <th><label>Profile Settings</label></th>
         <tr>
-            <td> <label>First Name:</label> </td>
-            <td><input class="input" type="text" name=""></td>
+            <td><br> <label>First Name:</label> </td>
+            <td><br><input class="input" type="text" name=""></td>
 
         </tr>
         <tr>
@@ -109,7 +112,7 @@
     
     </table>
 </div>
-<div style="float: right;">
+<div style="float: right;margin-top: 2em;">
     <table>
         <tr>
             <td>
@@ -131,10 +134,6 @@
 </div>
 </div>
 </body>
-<footer >
-    <?php
-require('footeri.php');
-   ?>
 
 <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/index.js"></script>
@@ -238,6 +237,7 @@ input[type="date"]:hover::-webkit-calendar-picker-indicator:hover { opacity:0.15
   display: block;
   top: 0;
   left: 3px;
+  margin-right: 1em;
   width: 20px;
   height: 20px;
   border: 1px solid #1F2531;
@@ -275,6 +275,7 @@ input[type="radio"]:checked + span .fake-radiobutton:after { display: block; }
     border-radius: 5px;
     border: solid 1px #E3E2E0 ;
     color: white;
+    font-size: 0.7em; 
 }
 .outterd{
     background-color: #ffffff;
@@ -287,8 +288,8 @@ input[type="radio"]:checked + span .fake-radiobutton:after { display: block; }
 
 }
 .inner-cont{
-    background-color: #B86366;
-    color: white;
+    background-color: #B86466;
+    color: white  ;
     height: 32em;
     margin: 1em;
     border-radius:1.5em;
@@ -366,3 +367,7 @@ body{
     background-color: #1F2531;
 }
 </style>
+<footer >
+  <?php
+require('footeri.php');
+   ?>
