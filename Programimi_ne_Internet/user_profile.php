@@ -29,6 +29,7 @@
         <div class="avatar-preview" >
             <div id="imagePreview" >
             </div>
+
         </div>
     </div>
 </div>
@@ -105,7 +106,7 @@
             <td><input class="input" type="text" name=""></td>
 
         </tr>
-
+    
     </table>
 </div>
 <div style="float: right;">
