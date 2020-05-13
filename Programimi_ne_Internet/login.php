@@ -16,6 +16,8 @@ require('dbconfig.php');
        }
        else {
        $password=$_POST['password'];
+       if (strlen($password)>8 && strlen($password)<16) {
+
        $password=md5($password);
        $sql="INSERT INTO signup(email,username,password) VALUES(?,?,?)";
        $stmtInsert=$db->prepare($sql);
@@ -28,6 +30,8 @@ require('dbconfig.php');
        }
        else {
          echo "There were errors while saving the data.";
+       }}else {
+         echo '<script>alert("The password must contain from 8 to 15 characters!")</script>';
        }}
 
      }
@@ -55,18 +59,20 @@ require('dbconfig.php');
             $stmt->execute();
 
                if ($result=$stmt->fetch(PDO::FETCH_OBJ)) {
-                  if (!empty($_POST['checkbox'])) {
-                    setcookie("username",$username,time()+(10*365*24*60*60));
-                    setcookie("password",$_POST['password'],time()+(10*365*24*60*60));
-                  }
-                  else {
-                    if (isset($_COOKIE['username'])) {
-                      setcookie("username","");
-                    }
-                    if (isset($_COOKIE['password'])) {
-                      setcookie("password","");
-                    }
-                  }
+                 if (!empty($_POST['checkbox'])) {
+                   setcookie("username",$username,time()+(10*365*24*60*60));
+                   setcookie("password",$_POST['password'],time()+(10*365*24*60*60));
+                 }
+                 else {
+                   if (isset($_COOKIE['username'])) {
+                     setcookie("username","");
+                   }
+                   if (isset($_COOKIE['password'])) {
+                     setcookie("password","");
+                   }
+                 }
+
+
                     $_SESSION["username"] = $_POST["username"];
                     header("location:login_success.php");
                }
@@ -346,7 +352,7 @@ function startWorker() {
            <li  class="dropdown"><a id="ani"class="dropdbtn" >Dropdown</a>
            	<div class="dropdown-content">
            		<a id="dropdowmia" href="login.php" > LogIn/SignUp</a>
-           		<a id="dropdowmai" href="subscribe.php" >SUBSCRIBE</a>
+           		<a id="dropdowmai" href="https://www.smartapp.com/" >Smart App</a>
            		<a id="dropdowmia" href="https://www.apple.com/ios/app-store/" target="_blank"> App Store</a>
 							<a id="dropdowmia" href="https://play.google.com/" target="_blank">Play Store</a>
            	</div></li>
@@ -376,10 +382,11 @@ function startWorker() {
           <div class="inputs">
             <div class="input">
               <input placeholder="Username" required name="username" type="text" value="<?php
+
               if (isset($_COOKIE['username'])) {
-                echo $_COOKIE['username'];
-              }
-          else if ($_SERVER["REQUEST_METHOD"] == "POST")
+                  echo $_COOKIE['username'];
+                }
+              else if ($_SERVER["REQUEST_METHOD"] == "POST")
               {
               if (isset($_POST['wEmail'])) {
                 $email=$_POST['wEmail'];
@@ -392,12 +399,13 @@ function startWorker() {
             <div class="input">
               <input placeholder="Password" required name="password" type="password" value="<?php if (isset($_COOKIE['password'])) {
                 echo $_COOKIE['password'];
-              } ?>">
+              } ?>
+">
               <img src="img/pass.svg">
             </div>
             <label class="checkbox">
               <input type="checkbox" name="checkbox" <?php if (isset($_COOKIE['username'])) {
-               ?>checked <?php } ?>>
+               ?>checked <?php } ?> >
               <span>Remember me</span>
             </label>
           </div>
