@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 }
 </script>
-   <div class="none" >
+   <div class="none" style="background:unset !important">
     <div class="innerdivv" style="margin-left: 1em;">
            	<form id="contactForm" action="contactform.php" method="post" enctype="text/plain">
            		Name:<br>
