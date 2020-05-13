@@ -2,29 +2,22 @@
   <?php
   require('headeri.php');
    ?>
+   <?php
+   $name = $email = $gender = $message = $subject = "";
+   $errName = $errEmail = $errGender = $errMessage = $errSubject = "";
+
+   if ($_SERVER["REQUEST_METHOD"] == "POST") {
+     if(empty($_POST["name"]))
+     {
+       $errName = "Name is required";
+     }
+     else{
+       $name = $_POST["name"];
+     }
+   ?>
    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
    <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
    <script type="text/javascript">
-<?php
-$name = $email = $gender = $message = $subject = "";
-$errName = $errEmail = $errGender = $errMessage = $errSubject = "";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if(empty($_POST["name"]))
-  {
-    $errName = "Name is required";
-  }
-  else{
-    $name = $_POST["name"];
-  }
-if(empty($_POST["gender"]))
-  {
-    $errGender = "Gender is required";
-  }
-  else{
-    $gender = $_POST["gender"];
-  }
-?>
  function sendMessage() {
 
        $.ajax({
@@ -47,11 +40,11 @@ if(empty($_POST["gender"]))
 
 }
 </script>
-   <div class="none" style="background:unset !important">
+   <div class="none">
     <div class="innerdivv" style="margin-left: 1em;">
            	<form id="contactForm" action="contactform.php" method="post" enctype="text/plain">
            		Name:<br>
-           		<input type="text" name="name" id="firstName" class="form-control" value=<?php echo $name ?>><br><br>>
+           		<input type="text" name="name" required="" id="firstName" class="form-control"><br><br>
                <button type="button" class="save" id="signupi">Save Name</button>
          <button type="button" class="access" id="signupi">Get Name</button><br>
 
@@ -60,7 +53,6 @@ if(empty($_POST["gender"]))
            		Gender:<br>
            		<input type="radio" name="gender"class="form-control" value="female" checked=""> Male
            		<input type="radio" name="gender"class="form-control" value="other"> Female<br>
-              <span class="error"><?php echo $errGender ?></span><br>
                Subject:<br>
            		<input type="text" id="subject" name="subject" class="form-control" size="20" required=""><br>
            		Message:<br>
@@ -83,7 +75,10 @@ if(empty($_POST["gender"]))
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
      <script>
-
+   function validateEmail(email) {
+   	    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+   	    return re.test(String(email).toLowerCase());
+   	}
    var charactersLeft = 0;
      	$( document ).ready(function() {
      	   charactersLeft = $("textarea[name='message']").attr("size");
@@ -97,11 +92,11 @@ if(empty($_POST["gender"]))
    		  		alert("You must accept terms and conditions")
    				return false;
    	  		}
-                       /*    if(!validateEmail($('input[name="email"]').val()))
+                           if(!validateEmail($('input[name="email"]').val()))
    	  		{
    	  			alert("Email is not valid!");
    	  			return false;
-   	  		}*/
+   	  		}
    	  		alert("Message Sent!");
      		}
 
