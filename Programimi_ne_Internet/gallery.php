@@ -1262,12 +1262,14 @@ $(document).ready(function(){
 		</tr>
 	</table>
 	
-	<table>
-	<tr>
-	<td>
-	<h2 id="inherit">	
-<?php require('inheritance.php'); ?>
-<form action="WriteToFile.php" method="POST">
+		<div class="row">
+  <div class="column" style = "background-color:lightgreen;">
+   
+    <p><?php require('inheritance.php'); ?></p>
+  </div>
+  <div class="column" style = "background-color:lightblue;" >
+    
+    <p><form action="WriteToFile.php" method="POST">
 <br>Give us advices :
     <input name="field1" type="text" />
     <input type="submit" name="submit" value="Send">
