@@ -5,7 +5,7 @@
    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
    <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
    <script type="text/javascript">
-<?php 
+<?php
 $name = $email = $gender = $message = $subject = "";
 $errName = $errEmail = $errGender = $errMessage = $errSubject = "";
 
@@ -75,10 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
      <script>
-   /*function validateEmail(email) {
-   	    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-   	    return re.test(String(email).toLowerCase());
-   	}*/
+
    var charactersLeft = 0;
      	$( document ).ready(function() {
      	   charactersLeft = $("textarea[name='message']").attr("size");
@@ -145,25 +142,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      	});
      </script>
      <script>
-     	var contacts = ['Dave', 'Alice', 'Bob'];
-     	var emails = ['dave@smartapp.com','alice@smartapp.com','bob@smartapp.com'];
 
-     	var contactObject = [];
-     	for(var i = 0; i<contacts.length; i++)
-     	{
-     		var obj = {
-     			name:contacts[i],
-     			email:emails[i]
-     		};
-     		contactObject.push(obj);
-     	}
-     	var ul = '<ul>';
-       for(var i = 0; i<contactObject.length; i++)
-       {
-       	ul = ul + '<li><b>'+contactObject[i].name+'</b> <i>'+contactObject[i].email+'</i></li>';
-       }
-       ul = ul + '</ul>';
-       $("#contact-list").html(ul);
+     
        function updateBackground() {
      var
        hr = (new Date()).getHours(),
