@@ -1261,8 +1261,7 @@ $(document).ready(function(){
 
 		</tr>
 	</table>
-	<button  onclick="window.location.href = 'game.php'" style="margin-left:5em; margin-top:5em; height:50px;width:100px;
-	border-radius:7px;color:white;background-color:#B86466">GAME</button>
+	
 	<table>
 	<tr>
 	<td>
