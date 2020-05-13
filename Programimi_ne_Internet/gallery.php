@@ -754,7 +754,7 @@ $(document).ready(function(){
     	height: 180px;
     	width: 500px;
     	border-radius: 90px;
-    	background-color: grey;
+    	background-color: lightblue;
     	color: black;
     	text-align: center;
     	margin-right: 1px;
@@ -890,24 +890,33 @@ $(document).ready(function(){
 
     }
     /* ketu mbaron pjesa e tabelave me buttona*/
+	* {
+ 	 box-sizing: border-box;
+	}
 	form#f{
 		margin-top:2em;
 		padding:2em;
 		padding-left:28em;
 		color:lightblue;
 	}
-	input#ss{
-		padding-left:.5em;
-		padding-right:.5em;
-	}
-	h2#inherit 
-	{
 
-		padding-top:20px;
-		font-size:16px;
-		padding-left:58em;
-		color:white;
-	} 
+	.column {
+		text-align:center;	
+		margin-top:4em;
+		margin-left:6.8em;	
+		float: left;
+		width: 22.33%;
+		padding: 7px;
+		height: 100px; 
+		color:purple;
+	}
+
+	.row:after {
+		text-align:center;	
+		content: "";
+		display: table;
+		clear: both;
+	}
      @keyframes animate
     {
       0%,80%
