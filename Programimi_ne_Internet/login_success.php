@@ -16,8 +16,8 @@ header('location: login.php');
 <section class="links">
    <nav class="link-effect-13" id="link-effect-13">
   <a id="log" href="logout.php"><span data-hover="Ironman">LogOut</span></a>
-    <a id="log" href="changePassword.php"><span data-hover="Batman">Change Password</span></a>
-        <a id="log" href="album.php"><span data-hover="Ironman">Add Personal Photos</span></a>
+    <a id="log" href="changePassword.php"><span data-hover="Batman">Change Password/Delete</span></a>
+
   </nav>
 </section>
 <?php
@@ -153,7 +153,7 @@ if(isset($_POST["insert"]))
 
         </tr>
         <tr>
-          <td><input type="submit" style="margin-left: 8em;" name="insert" value="Submit"></td>
+          <td><input type="submit" style="margin-left: 8em;" name="insert" value="Save"></td>
         </tr>
     </table>
 </div>
