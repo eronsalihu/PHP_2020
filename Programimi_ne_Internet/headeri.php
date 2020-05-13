@@ -149,7 +149,7 @@ function startWorker() {
            <li id="ani" class="dropdown"><a class="dropdbtn" >Dropdown</a>
            	<div class="dropdown-content">
            		<a id="dropdowmia" href="login.php" > LogIn/SignUp</a>
-           		<a id="dropdowmai" href="subscribe.php" >SUBSCRIBE</a>
+           		<a id="dropdowmai" href="https://www.smartapp.com/" >SmartApp</a>
            		<a id="dropdowmia" href="https://www.apple.com/ios/app-store/" target="_blank"> App Store</a>
 							<a id="dropdowmia" href="https://play.google.com/" target="_blank">Play Store</a>
            	</div></li>
