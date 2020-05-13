@@ -1143,17 +1143,19 @@ $(document).ready(function(){
 
 		</div>
 		<div class="photo1">
-			<img src="images/techimages/1.jpg">
-			<img src="images/techimages/2.jpg">
-			<img src="images/techimages/3.jpg">
-			<img src="images/techimages/4.jpg">
-			<img src="images/techimages/5.jpg">
-			<img src="images/techimages/6.jpg">
 			<img src="images/techimages/7.jpg">
 			<img src="images/techimages/8.jpg">
 			<img src="images/techimages/9.jpg">
+			<img src="images/TechFuturistic/1.jpg">
+			<img src="images/TechFuturistic/2.jpg">
+			<img src="images/TechFuturistic/3.jpg">
+			<img src="images/TechFuturistic/6.jpg">
+			<img src="images/TechFuturistic/5.jpg">
+			<img src="images/TechFuturistic/4.png">
+			
 
 		</div>
+
 
 			
 	</section>
