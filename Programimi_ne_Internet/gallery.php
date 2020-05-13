@@ -1261,14 +1261,16 @@ $(document).ready(function(){
 
 		</tr>
 	</table>
-	<button  onclick="window.location.href = 'game.php'" style="margin-left:5em; margin-top:5em; height:50px;width:100px;
+	<button  onclick="window.location.href = 'game.php'" style="margin-left:50.7em; margin-top:4em; height:50px;width:100px;
 	border-radius:7px;color:white;background-color:#B86466">GAME</button>
-	<table>
-	<tr>
-	<td>
-	<h2 id="inherit">	
-<?php require('inheritance.php'); ?>
-<form action="WriteToFile.php" method="POST">
+		<div class="row">
+  <div class="column" style = "background-color:lightgreen;">
+   
+    <p><?php require('inheritance.php'); ?></p>
+  </div>
+  <div class="column" style = "background-color:lightblue;" >
+    
+    <p><form action="WriteToFile.php" method="POST">
 <br>Give us advices :
     <input name="field1" type="text" />
     <input type="submit" name="submit" value="Send">
@@ -1277,14 +1279,12 @@ $(document).ready(function(){
 <br>
 	Read the advices :
     <input type="submit" name="submit" value="Read" >
-</form>
-<br>
-<?php require('personNumber.php'); ?>
-
-	</h2>
-</td>
-	</tr>
-	</table>
+</form></p>
+  </div>
+  <div class="column" style = "background-color:lightgreen; padding-top:2.2em;">
+  <p><?php require('personNumber.php'); ?></p>
+  </div>
+</div>
 
 <?php
 require('footeri.php'); ?>
