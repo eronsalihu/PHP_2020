@@ -1271,12 +1271,12 @@ $(document).ready(function(){
   </div>
   <div class="column" style = "background-color:lightblue;" >
     
-    <p><form action="WriteToFile.php" method="POST">
+    <p><form action="WriteToFile.php" method="POST" style="margin:0;padding:0;">
 <br>Give us advices :
     <input name="field1" type="text" />
     <input type="submit" name="submit" value="Send">
 </form>
-<form action="readToFile.php" method="POST">
+<form action="readToFile.php" method="POST" style="margin:0;padding:0;">
 <br>
 	Read the advices :
     <input type="submit" name="submit" value="Read" >
