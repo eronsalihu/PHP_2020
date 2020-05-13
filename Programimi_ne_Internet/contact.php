@@ -17,6 +17,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   else{
     $name = $_POST["name"];
   }
+if(empty($_POST["gender"]))
+  {
+    $errGender = "Gender is required";
+  }
+  else{
+    $gender = $_POST["gender"];
+  }
 ?>
  function sendMessage() {
 
@@ -53,6 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
            		Gender:<br>
            		<input type="radio" name="gender"class="form-control" value="female" checked=""> Male
            		<input type="radio" name="gender"class="form-control" value="other"> Female<br>
+              <span class="error"><?php echo $errGender ?></span><br>
                Subject:<br>
            		<input type="text" id="subject" name="subject" class="form-control" size="20" required=""><br>
            		Message:<br>
