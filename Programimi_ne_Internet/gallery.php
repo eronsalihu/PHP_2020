@@ -1276,14 +1276,12 @@ $(document).ready(function(){
 <br>
 	Read the advices :
     <input type="submit" name="submit" value="Read" >
-</form>
-<br>
-<?php require('personNumber.php'); ?>
-
-	</h2>
-</td>
-	</tr>
-	</table>
+</form></p>
+  </div>
+  <div class="column" style = "background-color:lightgreen; padding-top:2.2em;">
+  <p><?php require('personNumber.php'); ?></p>
+  </div>
+</div>
 
 <?php
 require('footeri.php'); ?>
