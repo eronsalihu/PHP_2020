@@ -2,51 +2,8 @@
 require('dbconfig.php');
  ?>
 
- <script>
- $('#change_Pass').submit(function(e) {
-     var $this = $(this);                    // It's a good to cache stuff
 
-     $.ajax({
-         data: $this.serialize(),
-         type: $this.attr('method'),         // You want `method` here
-         url: 'changePassword.php', // Dunno why you used `attr`
-         success: function() {
-            alert("Password Changed Succesfully");
-         },
-         error: function(e, x, r) {
-            alert("Didn't change the password");
-         }
-     });
 
-     e.preventDefault();
- });
- </script>
- <?php
- if(isset($_POST['change'])){}
-$username=$_SESSION['username'];
-$password = $_POST['old'];
-$newpassword = $_POST['new'];
-$confirmnewpassword = $_POST['verify'];
-$password=md5($password);
-$sql = "SELECT * FROM signup WHERE `username` = ? AND 'password'=?  LIMIT 1";
-       $query = $db->prepare($sql);
-       $query->bindParam(1, $username, PDO::PARAM_STR);
-       $query->bindParam(2, $password, PDO::PARAM_STR);
-       if($query->execute() && $query->rowCount()){
-            if($newpassword == $confirmnewpassword) {
-                    $sql = "UPDATE `signup` SET `password` = ? WHERE `username` = ?";
-
-                    $query = $dbh->prepare($sql);
-                    $query->bindParam(1, $newpassword, PDO::PARAM_STR);
-                    $query->bindParam(2, $username, PDO::PARAM_STR);
-                    if($query->execute()){
-                        echo '<script>alert("Password Changed Successfully!"></script>';
-                    }else{
-                        echo '<script>alert("Password could not be updated!"></script>';
-                    }
-
-}}
- ?>
  <!DOCTYPE html>
  <html >
  <head>
@@ -158,7 +115,17 @@ $sql = "SELECT * FROM signup WHERE `username` = ? AND 'password'=?  LIMIT 1";
      cursor: pointer;
  font-family: Times-New-Roman"
  }
-
+ #sub{
+   display: block;
+     background: #B86366;
+     padding: 14px 52px;
+     border-radius: 12px;
+     color: white;
+     font-weight: 700;
+     font-size: 21px;
+     cursor: pointer;
+ font-family: Times-New-Roman"
+ }
  *{
  	margin: 0;
  	padding: 0;
@@ -191,6 +158,18 @@ $sql = "SELECT * FROM signup WHERE `username` = ? AND 'password'=?  LIMIT 1";
  nav a{
  	padding: 1em;
  	text-transform: uppercase;
+ }
+ #log{
+ 	font-family: 'Roboto Condensed', sans-serif;
+ 	font-size:20px;
+    text-decoration:none;
+    border: none;
+    float: right;
+    margin-right: 2em;
+
+ }
+ #log:hover{
+     margin-top: 0;
  }
  a{
  	color:#656A6D;
@@ -313,7 +292,7 @@ $sql = "SELECT * FROM signup WHERE `username` = ? AND 'password'=?  LIMIT 1";
             <li  class="dropdown"><a id="ani"class="dropdbtn" >Dropdown</a>
             	<div class="dropdown-content">
             		<a id="dropdowmia" href="login.php" > LogIn/SignUp</a>
-            		<a id="dropdowmai" href="subscribe.php" >SUBSCRIBE</a>
+            		<a id="dropdowmai" href="https://www.smartapp.com/" >Smart App</a>
             		<a id="dropdowmia" href="https://www.apple.com/ios/app-store/" target="_blank"> App Store</a>
  							<a id="dropdowmia" href="https://play.google.com/" target="_blank">Play Store</a>
             	</div></li>
@@ -334,44 +313,114 @@ $sql = "SELECT * FROM signup WHERE `username` = ? AND 'password'=?  LIMIT 1";
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
-
+<input id="sub" type="submit" 	 name="change" value="DeleteAccount"  style="margin-top:3em; float:right;"onclick="location.href='login_success.php'">
 <div style="clear: both; text-align: center;">
   <h1 style="color: white;font-family: Times-New-Roman;font-size: 40px; font:bold; color: #B86366" >Change your password</h1>
   <p style="color: white;font-family: Times-New-Roman;font-size: 25px;">Write the old password and verify the new one...</p>
 </div>
+
 <div class="align">
 <div class="card">
 <div class="head">
 <div></div>
-<a id="login" class="selected" href="#login">ChangePw</a>
+<a id="login" class="selected" href="#ChangePw">ChangePw</a>
 
 <div></div>
 </div>
 <div class="">
 </div>
 <div class="tabs">
-<form action="changePassword.php" id="change_Pass" method="post">
+<form action="changePassword.php" id="resetform" method="post">
   <div class="inputs">
     <div class="input">
-      <input placeholder="Old Password" type="password" required name="old" value="">
+      <input placeholder="Old Password" type="password" required id="old_password" name="old_password" value="">
       <img src="img/pass.svg">
     </div>
     <div class="input">
-
-      <input placeholder="New Password" name="newPassword" type="password" required value="">
+      <input type="hidden" name="username" value="<?php if (isset($_SESSION['username'])) {
+        $sname=$_SESSION['username'];
+        echo $sname;
+      } ?>" ></input>
+      <input placeholder="New Password"  name="new_password" id="new_password" type="password" required value="">
       <img src="img/pass.svg">
     </div>
     <div class="input">
-      <input placeholder="Verify Password" required type="password" name="verify">
+      <input placeholder="Verify Password" required type="password" name="con_newpassword"  id="con_newpassword">
       <img src="img/pass.svg">
     </div>
   </div>
-  <input id="subb" type="submit" 	 name="change" value="Change Pw">
+  <input id="subb" type="submit" 	 name="password_change" value="Change Password">
 
 </form>
 </div>
+<div id="message"></div>
 </div>
-<input id="subb" type="submit" 	 name="change" value="Dont change"  style="margin-top:3em;"onclick="location.href='login_success.php'">
+<input id="sub" type="submit" 	 name="change" value="Dont change"  style="margin-top:3em;"onclick="location.href='login_success.php'">
 </div>
+<script>
+$(document).ready(function() {
+  var frm = $('#resetform');
+  frm.submit(function(e){
+      e.preventDefault();
 
+      var formData = frm.serialize();
+      formData += '&' + $('#subb').attr('name') + '=' + $('#subb').attr('value');
+      $.ajax({
+          type: frm.attr('method'),
+          url: frm.attr('action'),
+          data: formData,
+          success: function(data){
+              $('#message').html(data).delay(3000).fadeOut(3000);
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+              $('#message').html(textStatus).delay(2000).fadeOut(2000);
+          }
+
+      });
+  });
+});
+</script>
+<?php
+
+
+    if (isset($_POST['password_change'])) {
+
+        $username = strip_tags($_POST['username']);
+        $password = strip_tags($_POST['old_password']);
+        $newpassword = strip_tags($_POST['new_password']);
+        $confirmnewpassword = strip_tags($_POST['con_newpassword']);
+
+        $sql = "SELECT * FROM `signup` WHERE `username` = ? ";
+
+        $query = $db->prepare($sql);
+        $query->bindParam(1, $username, PDO::PARAM_STR);
+
+        if($query->execute() && $query->rowCount()){
+
+            if ($query->fetch()){
+                if($newpassword == $confirmnewpassword) {
+                  $newpassword=md5($newpassword);
+                    $sql = "UPDATE `signup` SET `password` = ? WHERE `username` = ?";
+
+                    $query = $db->prepare($sql);
+                    $query->bindParam(1, $newpassword, PDO::PARAM_STR);
+                    $query->bindParam(2, $username, PDO::PARAM_STR);
+                    if($query->execute()){
+                        echo '<script>alert("Password changed succesfully!")</script>';
+                        header('location:login_success.php');
+                    }else{
+                        echo '<script>alert("Password could not be updated")</script>';
+                    }
+                } else {
+                    echo "Passwords do not match!";
+                }
+            }else{
+                echo "Please type your current password accurately!";
+            }
+        }else{
+            echo "Incorrect username";
+        }
+    }
+
+?>
 <?php require('footeri.php') ?>
