@@ -328,15 +328,8 @@ Finally, use the Google Assistant, Amazon Alexa, or one of the SmartThings apps 
 </table>
 
 <!-- Loja -->
- <div style="width:100%; text-align:center; padding-left: 30em;
- padding-top: 2em;margin-bottom: 1em;">
-        <canvas id="canvas" width="400" height="340"
-                style="display:inline;
-                 background:-webkit-linear-gradient( #1f4353,#ffffff,#123245);
-                border:1px solid  #454545  ">
-        </canvas>
-    </div>
-
+<button  onclick="window.location.href = 'game.php'" style="font-size:1em; margin-left:39em; margin-top:5em; height:50px;width:150px;
+	border-radius:7px;color:white;background-color:#B86466;"><i class="fa fa-gamepad"></i>  GAME</button>
 <?php
 require('footeri.php');
  ?>
