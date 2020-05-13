@@ -8,6 +8,7 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/sweetalert2/3.0.3/sweetalert2.min.js"></script>
 </head>
+
 <script type="text/javascript">
 	$(document).ready(function() {
 
@@ -127,6 +128,9 @@
 });
 </script>
 <body>
+<button onclick="window.location.href = 'style_demo.php'" style="margin-right:3em; background-color:#1F2531; height:33px;color:white;border:solid 2px #E3E2E0;
+border-radius:7px;"><i class="fa fa-arrow-left"></i>
+ BACK</button>
 <div id="canves">
     <div class="restart"><i class="fa fa-repeat"></i></div>
     <div class="curtain"></div>
@@ -141,6 +145,6 @@
     <ul class="tower" id="tower-1"></ul>
     <ul class="tower" id="tower-2"></ul>
     <ul class="tower" id="tower-3"></ul>
-</div>
+</div> 
 </body>
 
