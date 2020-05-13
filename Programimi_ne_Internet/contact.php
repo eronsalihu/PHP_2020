@@ -75,10 +75,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
      <script>
-   function validateEmail(email) {
+   /*function validateEmail(email) {
    	    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
    	    return re.test(String(email).toLowerCase());
-   	}
+   	}*/
    var charactersLeft = 0;
      	$( document ).ready(function() {
      	   charactersLeft = $("textarea[name='message']").attr("size");
@@ -92,11 +92,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    		  		alert("You must accept terms and conditions")
    				return false;
    	  		}
-                           if(!validateEmail($('input[name="email"]').val()))
+                       /*    if(!validateEmail($('input[name="email"]').val()))
    	  		{
    	  			alert("Email is not valid!");
    	  			return false;
-   	  		}
+   	  		}*/
    	  		alert("Message Sent!");
      		}
 
