@@ -39,6 +39,15 @@
    else{
     $subject = $_POST["subject"];
    }
+   if(empty($_POST["message"]))
+   {
+    $errMessage = "Message is required";
+   }
+   else{
+    $message = $_POST["message"];
+   }
+   }
+
    ?>
    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
    <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
