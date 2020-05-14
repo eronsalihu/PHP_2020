@@ -434,6 +434,65 @@ require('headeri.php');
 
 			</div>
 
+			<div class="cookie-container">
+      <p>
+        We use cookies in this website to give you the best experience on our
+        site and show you relevant ads. To find out more, read our
+        <a href="#">privacy policy</a> and <a href="#">cookie policy</a>.
+      </p>
+
+      <button class="cookie-btn">
+        Okay
+      </button>
+    </div>
+	<style>
+	.cookie-container {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  background: #2f3640;
+  color: #f5f6fa;
+  padding: 0 32px;
+  box-shadow: 0 -2px 16px rgba(47, 54, 64, 0.39);
+
+  transition: 400ms;
+}
+
+.cookie-container.active {
+  bottom: 0;
+}
+
+.cookie-container a {
+  color: #f5f6fa;
+}
+
+.cookie-btn {
+  background: #B86366;
+  border: 0;
+  color: #f5f6fa;
+  padding: 12px 48px;
+  font-size: 18px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+	</style>
+
+    <script type="text/javascript">
+	const cookieContainer = document.querySelector(".cookie-container");
+const cookieButton = document.querySelector(".cookie-btn");
+
+cookieButton.addEventListener("click", () => {
+  cookieContainer.classList.remove("active");
+  localStorage.setItem("cookieBannerDisplayed", "true");
+});
+
+setTimeout(() => {
+  if (!localStorage.getItem("cookieBannerDisplayed")) {
+    cookieContainer.classList.add("active");
+  }
+}, 2000);</script>
 		</div>
 
 <footer>
