@@ -13,6 +13,18 @@ echo '<h1 style="color: white;font-family: Times-New-Roman;clear: both;font-size
 header('location: login.php');
 }
 ?>
+<?php
+if (isset($_SESSION['username'])) {
+  $username=$_SESSION['username'];
+  if (isset($_POST['insert'])) {
+    $target_dir = "uploads/";
+     $file = $_FILES['image']['tmp_name'];
+     $image= addslashes(file_get_contents($_FILES['image']['tmp_name']));
+     $image_name = addslashes($_FILES['image']['name']);
+  }
+}
+  ?>
+
 <section class="links">
    <nav class="link-effect-13" id="link-effect-13">
   <a id="log" href="logout.php"><span data-hover="Ironman">LogOut</span></a>
@@ -20,15 +32,9 @@ header('location: login.php');
 
   </nav>
 </section>
-<?php
-if(isset($_POST["insert"]))
- {
-      $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
-      $query = "INSERT INTO tbl_images(name) VALUES ('$file')";
-}
- ?>
-<head>
 
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
@@ -42,6 +48,7 @@ if(isset($_POST["insert"]))
 </head>
 
 <body>
+
 <div class="outterd">
     <div class="inner-cont">
 <table>
@@ -54,7 +61,7 @@ if(isset($_POST["insert"]))
 
     <div class="avatar-upload">
         <div class="avatar-edit">
-            <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+            <input type='file' name="image" id="imageUpload" accept=".png, .jpg, .jpeg" />
             <label for="imageUpload"></label>
         </div>
         <div class="avatar-preview" >
@@ -62,7 +69,7 @@ if(isset($_POST["insert"]))
             </div>
         </div>
     </div>
-    <input type="submit" name="insert" id="insert" value="Insert">
+    <input type="submit"  name="insert" id="insert" value="Insert">
   </form>
 </div>
 </tr>
@@ -153,39 +160,147 @@ if(isset($_POST["insert"]))
 
         </tr>
         <tr>
-          <td><input type="submit" style="margin-left: 8em;" name="insert" value="Save"></td>
+          <td> <a href="#" data-toggle="modal" style="border:none; font-size:2em;" data-target="#signup">Edit</a></td>
         </tr>
     </table>
 </div>
-<div style="float: right;">
+<div style="float: right; padding-right:2em;">
     <table>
         <tr>
             <td>
-                <label>Status</label>
+                <label>Status <?php if (isset($_SESSION['username'])) {
+                echo ":Active";
+                } ?></label>
             </td>
         </tr>
-        <tr>
-            <td>
-                <label>User Rating</label>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label>Member Since</label>
-            </td>
-        </tr>
+
     </table>
 </div>
 </div>
 </div>
   </div>
+  <div class="modal fade my-modal" id="signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Give form to your profile</h4>
+        </div>
+        <div class="modal-body">
+          <form class="form" method="post" action="">
+        <div class="form-group">
+          <label for="exampleInputEmail1">First Name:</label>
+          <input type="text" class="form-control" required name="firstName" id="exampleInputEmail1" placeholder="First Name">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Last Name:</label>
+          <input type="text" class="form-control" required name="lastName" id="exampleInputEmail1" placeholder="Last Name">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Gender:</label>
+          <input type="radio" name="gender" value="F" id="exampleInputEmail1" class="form-control" >
+          <span class="label-visible">
+            <span class="fake-radiobutton"></span>
+            Female
+          </span>
+          <input type="radio" name="gender" value="M" id="exampleInputEmail1" class="form-control">
+          <span class="label-visible">
+            <span class="fake-radiobutton"></span>
+            Male
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1" required>Birthday</label>
+          <input type="text" class="form-control" name="date" id="exampleInputPassword1" placeholder="Enter Birthday yy-mm-dd">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">About:</label>
+          <input type="textarea" required maxlength="150" class="form-control" name="about" id="exampleInputPassword1" placeholder="About You">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Phone Number:</label>
+          <input type="text" class="form-control" required name="phone" id="exampleInputEmail1" placeholder="Phone Number">
+        </div>
+        <button type="submit" name="create" class="btn btn-primary btn-lg">Create Profile!</button>
+      </form>
+        </div>
+        <div class="modal-footer">
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+ $(document).ready(function(){
+      $('input[type="radio"]').click(function(){
+           var gender = $(this).val();
+           $.ajax({
+                url:"login_success.php",
+                method:"POST",
+                data:{gender:gender},
+                success:function(data){
+                     $('#result').html(data);
+                }
+           });
+      });
+ });
+ </script>
 
 </body>
+<?php
+if (isset($_SESSION['username'])) {
+  if (isset($_POST['create'])) {
+$username=$_SESSION['username'];
+$firstName=$_POST['firstName'];
+$lastName=$_POST['lastName'];
+$gender=$_POST['gender'];
+$date=$_POST['date'];
+$about=$_POST['about'];
+$phone=$_POST['phone'];
 
+$query="SELECT * from userInfo where useri =:username";
+$stmt=$db->prepare($query);
+$stmt->bindParam(":username",$username);
+$stmt->execute();
+   if ($result=$stmt->fetch(PDO::FETCH_OBJ)) {
+     $sql="UPDATE userInfo SET firstName=:first, lastName=:last,Gender=:g,birthday=:birth,about=:ab,phone=:ph WHERE useri='$username'";
+     $stmtInsert=$db->prepare($sql);
+     $stmtInsert->bindParam(":first",$firstName);
+     $stmtInsert->bindParam(":last",$lastName);
+     $stmtInsert->bindParam(":g",$gender);
+     $stmtInsert->bindParam(":birth",$date);
+     $stmtInsert->bindParam(":ab",$about);
+     $stmtInsert->bindParam(":ph",$phone);
+$rezultati=$stmtInsert->execute();
+if ($rezultati) {
+  echo '<script>alert("Your data successfully updated")</script>';
+}
+else {
+
+}
+
+
+}
+
+else {
+
+  $sql="INSERT INTO userInfo(useri,firstName,lastName,Gender,birthday,about,phone) VALUES('$username','$firstName','$lastName','$gender','$date','$about','$phone')";
+  $stmtInsert=$db->prepare($sql);
+$result=$stmt->execute();
+if ($result) {
+echo '<script>alert("Your profile is completed")</script>';
+}
+}
+}
+}
+ ?>
 <footer >
+
     <?php
 require('footeri.php');
    ?>
+
 
 <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/index.js"></script>
@@ -449,13 +564,13 @@ input[type="radio"]:checked + span .fake-radiobutton:after { display: block; }
     margin-left: 1em;
     border-radius: 1.5em;
     padding: 1em;
-    height: 57em;
+    height: 66em;
 
 }
 .inner-cont{
     background-color: #B86366;
     color: white;
-    height: 35em;
+    height: 41em;
     margin: 1em;
     border-radius:1.5em;
     border: solid 20px #E3E2E0;
