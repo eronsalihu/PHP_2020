@@ -1,4 +1,4 @@
-<form id="f">
+<form id="f" style="padding-bottom:2em; ">
     <label for="fname" style="padding-left:13em; ">Get a photo , rotate and Save again.  </label><br><br>
     <label for="fname">File Number 1-6: </label>
     <input type="text" id="fname" name="txt10" placeholder="Type: z1|z2|z3|z4|z5|z6">
