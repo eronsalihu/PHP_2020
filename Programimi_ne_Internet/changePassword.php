@@ -1,13 +1,40 @@
 <?php
 require('dbconfig.php');
  ?>
-
+ <?php
+ if (isset($_SESSION['username'])) {
+   $username=$_SESSION['username'];
+ if (isset($_POST['deactivate'])) {
+ $passi=$_POST['password'];
+ $cpassi=$_POST['cpassword'];
+ if ($passi==$cpassi) {
+   $passi=md5($passi);
+   $query="DELETE FROM signup WHERE username=:username AND password=:passi";
+   $stmt=$db->prepare($query);
+   $stmt->bindParam(":username",$username);
+   $stmt->bindParam(":passi",$passi);
+   $result=$stmt->execute();
+   $edhe="DELETE FROM userInfo WHERE useri=:username";
+   $pytja=$db->prepare($edhe);
+   $pytja->bindParam(":username",$username);
+   $pytja->execute();
+     if ($result) {
+       header("location:login.php");
+     }
+     else {
+       echo '<script>alert("Your password is not correct")</script>';
+     }
+ }
+ }
+ }
+  ?>
 
 
  <!DOCTYPE html>
  <html >
  <head>
  	<title>Smart App</title>
+  	<link rel="stylesheet" href="css/bootstrap.min.css">
    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
        <link rel="stylesheet" type="text/css" href="css/reset.css">
      <link rel="stylesheet" type="text/css" href="css/projekti.css">
@@ -91,6 +118,9 @@ require('dbconfig.php');
  </head>
 
  <style>
+ .modal-footer{
+    text-align:center;
+}
  #newspaper {
    /* Old Chrome, Safari, Opera */
    -webkit-column-count: 2;
@@ -313,7 +343,7 @@ require('dbconfig.php');
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
-<input id="sub" type="submit" 	 name="change" value="DeleteAccount"  style="margin-top:3em; float:right;"onclick="location.href='login_success.php'">
+<a href="#" style="border:none;" data-toggle="modal" data-target="#signup">Delete Account</a>
 <div style="clear: both; text-align: center;">
   <h1 style="color: white;font-family: Times-New-Roman;font-size: 40px; font:bold; color: #B86366" >Change your password</h1>
   <p style="color: white;font-family: Times-New-Roman;font-size: 25px;">Write the old password and verify the new one...</p>
@@ -357,6 +387,38 @@ require('dbconfig.php');
 </div>
 <input id="sub" type="submit" 	 name="change" value="Dont change"  style="margin-top:3em;"onclick="location.href='login_success.php'">
 </div>
+
+
+<div class="modal fade my-modal" id="signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Deactivate Your Account</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form" method="post" action="changePassword.php">
+
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" required class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Confirm Password</label>
+        <input type="password" required class="form-control" name="cpassword" id="exampleInputPassword1" placeholder="Password">
+      </div>
+      <input type="submit" class="btn btn-primary btn-lg" name="deactivate" value="Deactivate">
+
+    </form>
+      </div>
+      <div class="modal-footer">
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
 $(document).ready(function() {
   var frm = $('#resetform');
@@ -423,4 +485,6 @@ $(document).ready(function() {
     }
 
 ?>
+
+
 <?php require('footeri.php') ?>
