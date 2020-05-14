@@ -40,16 +40,19 @@
 
 }
 </script>
-   <div class="none">
+    <div class="none" style="background:unset !important">
     <div class="innerdivv" style="margin-left: 1em;">
-           	<form id="contactForm" action="contactform.php" method="post" enctype="text/plain">
-           		Name:<br>
-           		<input type="text" name="name" required="" id="firstName" class="form-control"><br><br>
-               <button type="button" class="save" id="signupi">Save Name</button>
-         <button type="button" class="access" id="signupi">Get Name</button><br>
-
-           		E-mail:<br>
-               <input type="text" id="email" name="email"class="form-control" required=""><br>
+    <form id="contactForm" action="" method="post">
+           		<br>
+           		<input type="text" name="name" id="firstName" class="form-control" placeholder="Enter your name"value=<?php echo $name ?>><br><br>
+              <button type="button" class="save" id="signupi">Save Name</button>
+              <button type="button" class="access" id="signupi">Get Name</button><br>
+              <span class="error"><?php echo $errName ?></span><br>
+           		
+              <br>
+              <input type="text" id="email" name="email"class="form-control" placeholder="Enter your email"value=<?php echo $email ?>><br>
+              <span class="error"><?php echo $errEmail ?></span><br>
+           		
            		Gender:<br>
            		<input type="radio" name="gender"class="form-control" value="female" checked=""> Male
            		<input type="radio" name="gender"class="form-control" value="other"> Female<br>
