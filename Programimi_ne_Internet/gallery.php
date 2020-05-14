@@ -29,6 +29,23 @@ $(document).ready(function(){
 		window.location="https://magazine.artland.com/gallery-sign-up/";
 	}
 </script>
+<script>
+function showHint(str) {
+  if (str.length == 0) {
+    document.getElementById("txtHint").innerHTML = "";
+    return;
+  } else {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("txtHint").innerHTML = this.responseText;
+      }
+    };
+    xmlhttp.open("GET", "gethint.php?q=" + str, true);
+    xmlhttp.send();
+  }
+}
+</script>
   <style >
 	body
 	{
@@ -164,6 +181,7 @@ $(document).ready(function(){
 
 
 		}
+		
 		.permbajtja-1:hover
 		{
 			animation-play-state: paused;
@@ -754,8 +772,8 @@ $(document).ready(function(){
     	height: 180px;
     	width: 500px;
     	border-radius: 90px;
-    	background-color: lightblue;
-    	color: black;
+    	background-color: teal;
+    	color: cyan;
     	text-align: center;
     	margin-right: 1px;
     	margin-left: 150px;
@@ -766,7 +784,7 @@ $(document).ready(function(){
     {
     	font-size: 18px;
     	padding-top: 30px;
-    	color: black;
+    	color: 	black;
     	padding-bottom: 10px;
     	padding-left: 30px;
     	padding-right: 30px;
@@ -899,6 +917,18 @@ $(document).ready(function(){
 		padding-left:28em;
 		color:lightblue;
 	}
+	input#ss
+		{
+			background-color: teal;
+			border: none;
+			color: white;
+			padding-left:5px;
+			padding-right:5px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+ 		    cursor: pointer;
+		}
 
 	.column {
 		text-align:center;	
@@ -1205,15 +1235,15 @@ $(document).ready(function(){
 			</tr>
 		</table>
 <div>
-  <form id="f">
-    <label for="fname">Background-Color : </label>
-    <input type="text" id="fname" name="txt1" placeholder="Any color..">
-
+<form action="" id ="f">
+  <label for="fname">Background Color :</label>
+  <input type="text" id="fname" name="txt1" onkeyup="showHint(this.value)">
     <label for="lname">Text Color :</label>
-    <input type="text" id="lname" name="txt2" placeholder="Any color..">
+    <input type="text" id="lname" name="txt2" placeholder="Any color.." onkeyup="showHint(this.value)">
 
-  
+
     <input id="ss" type="submit" value="submit" name="sub"/>
+	<p>Suggestions: <span id="txtHint"></span></p>
   </form>
 </div>
 	<table>
