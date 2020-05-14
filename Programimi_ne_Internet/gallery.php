@@ -1295,7 +1295,7 @@ function showHint(str) {
 	</table>
 	
 		<div class="row">
-  <div class="column" style = "background-color:lightgreen;">
+  <div class="column" style = "background-color:lightgreen; border-radius:10px; padding-top:12px;">
    
     <p><?php require('inheritance.php'); ?></p>
   </div>
@@ -1312,7 +1312,7 @@ function showHint(str) {
     <input type="submit" name="submit" value="Read" >
 </form></p>
   </div>
-  <div class="column" style = "background-color:lightgreen; padding-top:2.2em;">
+  <div class="column" style = "background-color:lightgreen; padding-top:2.4em; border-radius:10px;">
   <p><?php require('personNumber.php'); ?></p>
   </div>
 </div>
