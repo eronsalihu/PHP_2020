@@ -7,3 +7,20 @@ echo '<script>alert("Email u dergua me sukses!")</script>';
 echo '<script>alert("Gjate dergimit ka hasur ne errore!")</script>';
 }
 ?>
+<?php
+if(isset($_POST["rating"]))
+      {
+           $query = "INSERT INTO rate(vleresimi) VALUES (:gender)";
+           $statement = $connect->prepare($query);
+           $statement->execute(
+                array(
+                     'vleresimi'     =>     $_POST["rating"]
+                )
+           );
+           $count = $statement->rowCount();
+          if($count > 0)
+          {
+               echo "Gender Inserted Successfully!";
+          }  
+}
+?>
