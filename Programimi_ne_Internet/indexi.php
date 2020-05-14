@@ -419,7 +419,7 @@ require('headeri.php');
 				</div>
 				<div>
 					<i class="fa fa-users"></i>
-					<p><a href="member.php">Members</a></p>
+					<p onclick="window.location.href = 'members.php'">Members</p>
 				</div>
 
 			</div>
