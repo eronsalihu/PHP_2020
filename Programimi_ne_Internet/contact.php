@@ -24,7 +24,14 @@
       $errEmail = "Please enter a valid email";
     }
     $email = $_POST["email"];
-  }
+   }
+   if(empty($_POST["gender"]))
+   {
+    $errGender = "Gender is required";
+   }
+   else{
+    $gender = $_POST["gender"];
+   }
    ?>
    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
    <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
