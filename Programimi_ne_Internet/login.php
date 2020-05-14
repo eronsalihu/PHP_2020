@@ -26,6 +26,7 @@ require('dbconfig.php');
        if ($result) {
          echo '<script>alert("Registration done!")</script>';
          $_SESSION["username"] = $_POST["username"];
+         $_COOKIE['koha']=date("Y/m/d");
          header("location:login_success.php");
        }
        else {
