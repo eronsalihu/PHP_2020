@@ -14,6 +14,17 @@
      else{
        $name = $_POST["name"];
      }
+   if(empty($_POST["email"]))
+   {
+    $errEmail = "Email is required";
+   }
+   else{
+    $emailRegex = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/'; 
+    if (!preg_match($emailRegex, $_POST["email"])) {
+      $errEmail = "Please enter a valid email";
+    }
+    $email = $_POST["email"];
+  }
    ?>
    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
    <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
