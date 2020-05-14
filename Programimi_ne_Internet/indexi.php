@@ -417,6 +417,10 @@ require('headeri.php');
 					<i class="fa fa-envelope"></i>
 					<p><a href="mailto:fiek@uni-pr.edu">fiek@uni-pr.edu</a></p>
 				</div>
+				<div>
+					<i class="fa fa-users"></i>
+					<p><a href="member.php">Members</a></p>
+				</div>
 
 			</div>
 
