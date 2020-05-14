@@ -1,16 +1,20 @@
-
+<?php
+require('headeri.php');
+ ?>
 <style>
 body{
 	background-color: #1F2531;
-	margin-left:32em;
-	margin-top:2em;
-	margin-right:32em;}
+	}
 #txtmessage{
 	border-radius:5px;
 	background-color:#E3E2E0;
 	font-size:2em;
+	color:black;
+	margin-left:16.5em;
+	font-family:"Times-New-Roman";
 }
-.message-box{margin-bottom:20px;border-radius:5px; border-top:#F0F0F0 2px solid;
+.message-box{margin-left:22em;margin-right:20.8em;margin-bottom:20px;
+color:black;border-radius:5px; border-top:#F0F0F0 2px solid;
 background:#E3E2E0;padding:10px; font-size:1.5em;}
 .btnEditAction{background-color:#1F2531;border:2px solid #B86366;
 border-radius:5px;padding:2px 10px;color:#FFF;}
@@ -39,7 +43,7 @@ function cancelEdit(message,id) {
 	$('#frmAdd').show();
 }
 function callCrudAction(action,id) {
-	$("#loaderIcon").show();
+	$("#loaderIcon");
 	var queryString;
 	switch(action) {
 		case "add":
@@ -96,8 +100,13 @@ foreach($comments as $k=>$v) {
 } ?>
 </div>
 
-<div id="frmAdd"><textarea name="txtmessage" id="txtmessage" cols="23" rows="3"></textarea>
-<p><button id="btnAddAction" name="submit" onClick="callCrudAction('add','')"><b>ADD MEMBER</b></button></p>
+<div id="frmAdd"><textarea name="txtmessage" id="txtmessage" cols="19" rows="3"></textarea>
+<p style="margin-right:31em; margin-top:15px;margin-botom:15px;"><button id="btnAddAction" name="submit" onClick="callCrudAction('add','')"><b>ADD MEMBER</b></button>
+</p>
 </div>
 <img src="LoaderIcon.gif" id="loaderIcon" style="display:none" />
 </div>
+<div style="margin-top:1em;"><br></div>
+<?php
+require('footeri.php');
+ ?>
