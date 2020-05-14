@@ -1,7 +1,8 @@
-<?php session_start(); ?> 
+<?php include('dbconfig.php'); ?>
 <?php require('headeri.php'); ?>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="jquery-1.11.2.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
   $(".photo").hover(function(){
@@ -181,7 +182,7 @@ function showHint(str) {
 
 
 		}
-		
+
 		.permbajtja-1:hover
 		{
 			animation-play-state: paused;
@@ -504,7 +505,7 @@ function showHint(str) {
 
     }
 
-	
+
     h2
     {
       font-size: 2em;
@@ -513,7 +514,7 @@ function showHint(str) {
       padding-left: 190px;
       padding-top: 200px;
     }
-	
+
     h2 span
     {
         animation: animate 1s linear infinite;
@@ -931,18 +932,18 @@ function showHint(str) {
 		}
 
 	.column {
-		text-align:center;	
+		text-align:center;
 		margin-top:4em;
-		margin-left:6.8em;	
+		margin-left:6.8em;
 		float: left;
 		width: 22.33%;
 		padding: 7px;
-		height: 100px; 
+		height: 100px;
 		color:purple;
 	}
 
 	.row:after {
-		text-align:center;	
+		text-align:center;
 		content: "";
 		display: table;
 		clear: both;
@@ -1182,12 +1183,12 @@ function showHint(str) {
 			<img src="images/TechFuturistic/6.jpg">
 			<img src="images/TechFuturistic/5.jpg">
 			<img src="images/TechFuturistic/4.png">
-			
+
 
 		</div>
 
 
-			
+
 	</section>
 		<div class="footer">
 		<table class="tabelanefund">
@@ -1226,7 +1227,7 @@ function showHint(str) {
 					<img src="images/techFact/3.jpg" width="320px" height="180px" align="center" class="firstphoto">
 
 					 <p class="firstperson">
-					 
+
 					 It was started in 1988 to help raise the awareness of computer related security issues.
 					To celebrate Computer Security Day is easy, and important – check your privacy settings on Facebook, change your passwords to something stronger.
 					</p>
@@ -1262,45 +1263,63 @@ function showHint(str) {
 				<div class="butonat">
 				<div class="rating">
 					<h3 class="ratingid" align="center">
-						Rate our Gallery
+						Rate our Web
 					</h3>
+
+          
 				<div class="rating1">
-					<input type="radio" name="rating" id="rate10" onclick="alert('Thank you')">
+					<input type="radio" name="rating" value="10" id="rate10" onclick="alert('Thank you')">
 					<label for="rate10">10</label>
-					<input type="radio" name="rating" id="rate9" onclick="alert('Thank you')">
+					<input type="radio" name="rating" value="9" id="rate9" onclick="alert('Thank you')">
 					<label for="rate9">9</label>
-					<input type="radio" name="rating" id="rate8" onclick="alert('Thank you')">
+					<input type="radio" name="rating" value="8" id="rate8" onclick="alert('Thank you')">
 					<label for="rate8">8</label>
-					<input type="radio" name="rating" id="rate7" onclick="alert('Thank you')">
+					<input type="radio" name="rating" value="7" id="rate7" onclick="alert('Thank you')">
 					<label for="rate7">7</label>
-					<input type="radio" name="rating" id="rate6" onclick="alert('Thank you , we will try better next time .')">
+					<input type="radio" name="rating" value="6" id="rate6" onclick="alert('Thank you , we will try better next time .')">
 					<label for="rate6">6</label>
-					<input type="radio" name="rating" id="rate5" onclick="alert('Thank you .')">
+					<input type="radio" name="rating" value="5" id="rate5" onclick="alert('Thank you .')">
 					<label for="rate5">5</label>
-					<input type="radio" name="rating" id="rate4" onclick="alert('Thank you , we will try better next time .')">
+					<input type="radio" name="rating" value="4" id="rate4" onclick="alert('Thank you , we will try better next time .')">
 					<label for="rate4">4</label>
-					<input type="radio" name="rating" id="rate3" onclick="alert('Thank you , we will try better next time .')">
+					<input type="radio" name="rating" value="3" id="rate3" onclick="alert('Thank you , we will try better next time .')">
 					<label for="rate3">3</label>
-					<input type="radio" name="rating" id="rate2" onclick="alert('Thank you , we will try better next time .')">
+					<input type="radio" name="rating" value="2" id="rate2" onclick="alert('Thank you , we will try better next time .')">
 					<label for="rate2">2</label>
-					<input type="radio" name="rating" id="rate1" onclick="alert('Thank you , we will try better next time .')">
+					<input type="radio" name="rating" value="1" id="rate1" onclick="alert('Thank you , we will try better next time .')">
 					<label for="rate1">1</label>
 				</div>
+        <script>
+        $('input[type="radio"]').click(function(){
+      var rating = $(this).val();
+      $.ajax({
+           url:"contactForm.php",
+           method:"POST",
+           data:{rating:rating},
+           success:function(data){
+                $('#result').html(data);
+           }
+      });
+ });
+});
+        </script>
+
 			</div>
+
 			</div>
 
 
 
 		</tr>
 	</table>
-	
+
 		<div class="row">
   <div class="column" style = "background-color:lightgreen; border-radius:10px; padding-top:12px;">
-   
+
     <p><?php require('inheritance.php'); ?></p>
   </div>
   <div class="column" style = "background-color:lightblue;" >
-    
+
     <p><form action="WriteToFile.php" method="POST" style="margin:0;padding:0;">
 <br>Give us advices :
     <input name="field1" type="text" />
@@ -1319,4 +1338,5 @@ function showHint(str) {
 <?php
 require('rotateimg.php'); ?>
 <?php
-require('footeri.php'); ?>
+require('footeri.php');
+ ?>
