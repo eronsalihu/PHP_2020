@@ -54,12 +54,18 @@
               <span class="error"><?php echo $errEmail ?></span><br>
            		
            		Gender:<br>
-           		<input type="radio" name="gender"class="form-control" value="female" checked=""> Male
-           		<input type="radio" name="gender"class="form-control" value="other"> Female<br>
-               Subject:<br>
-           		<input type="text" id="subject" name="subject" class="form-control" size="20" required=""><br>
-           		Message:<br>
-           		<textarea name="message" size="500"class="form-control" required=""></textarea><br>
+           		<input type="radio" name="gender"class="form-control" value="female" checked=""> Male<br>
+              
+           		<input type="radio" name="gender"class="form-control" value="other"value=<?php echo $gender ?>> Female<br>
+              <span class="error"><?php echo $errGender ?></span><br>
+             <br>
+           		<input type="text" id="subject" name="subject" class="form-control" placeholder="Subject"size="20" value=<?php echo $subject ?>><br>
+           		 <span class="error"><?php echo $errSubject ?></span><br>
+             <br>
+              <br>
+           		<textarea name="message" placeholder="Your message to us.. "size="500"class="form-control" value=<?php echo $message ?>></textarea><br>
+               <span class="error"><?php echo $errMessage ?></span><br>
+             <br>
            		<div>Characters left:<span id="char-left"></span></div>
            		Accept Terms and Conditions:<br>
            		<input type="checkbox" name="terms" class="form-control" size="50"><br><br>
