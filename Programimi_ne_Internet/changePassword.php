@@ -2,6 +2,50 @@
 require('dbconfig.php');
  ?>
  <?php
+
+
+     if (isset($_POST['password_change'])) {
+
+         $username = strip_tags($_POST['username']);
+         $password = strip_tags($_POST['old_password']);
+         $newpassword = strip_tags($_POST['new_password']);
+         $confirmnewpassword = strip_tags($_POST['con_newpassword']);
+
+         $sql = "SELECT * FROM `signup` WHERE `username` = ? ";
+
+         $query = $db->prepare($sql);
+         $query->bindParam(1, $username, PDO::PARAM_STR);
+
+         if($query->execute() && $query->rowCount()){
+
+             if ($query->fetch()){
+                 if($newpassword == $confirmnewpassword) {
+                   $newpassword=md5($newpassword);
+                     $sql = "UPDATE `signup` SET `password` = ? WHERE `username` = ?";
+
+                     $query = $db->prepare($sql);
+                     $query->bindParam(1, $newpassword, PDO::PARAM_STR);
+                     $query->bindParam(2, $username, PDO::PARAM_STR);
+                     if($query->execute()){
+                         echo '<script>alert("Password changed succesfully!")</script>';
+                         header('location:login_success.php');
+                     }else{
+                         echo '<script>alert("Password could not be updated")</script>';
+                     }
+                 } else {
+                     echo "Passwords do not match!";
+                 }
+             }else{
+                 echo "Please type your current password accurately!";
+             }
+         }else{
+             echo "Incorrect username";
+         }
+     }
+
+ ?>
+
+ <?php
  if (isset($_SESSION['username'])) {
    $username=$_SESSION['username'];
  if (isset($_POST['deactivate'])) {
@@ -442,49 +486,6 @@ $(document).ready(function() {
   });
 });
 </script>
-<?php
-
-
-    if (isset($_POST['password_change'])) {
-
-        $username = strip_tags($_POST['username']);
-        $password = strip_tags($_POST['old_password']);
-        $newpassword = strip_tags($_POST['new_password']);
-        $confirmnewpassword = strip_tags($_POST['con_newpassword']);
-
-        $sql = "SELECT * FROM `signup` WHERE `username` = ? ";
-
-        $query = $db->prepare($sql);
-        $query->bindParam(1, $username, PDO::PARAM_STR);
-
-        if($query->execute() && $query->rowCount()){
-
-            if ($query->fetch()){
-                if($newpassword == $confirmnewpassword) {
-                  $newpassword=md5($newpassword);
-                    $sql = "UPDATE `signup` SET `password` = ? WHERE `username` = ?";
-
-                    $query = $db->prepare($sql);
-                    $query->bindParam(1, $newpassword, PDO::PARAM_STR);
-                    $query->bindParam(2, $username, PDO::PARAM_STR);
-                    if($query->execute()){
-                        echo '<script>alert("Password changed succesfully!")</script>';
-                        header('location:login_success.php');
-                    }else{
-                        echo '<script>alert("Password could not be updated")</script>';
-                    }
-                } else {
-                    echo "Passwords do not match!";
-                }
-            }else{
-                echo "Please type your current password accurately!";
-            }
-        }else{
-            echo "Incorrect username";
-        }
-    }
-
-?>
 
 
 <?php require('footeri.php') ?>
