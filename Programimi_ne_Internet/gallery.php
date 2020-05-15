@@ -1,25 +1,25 @@
 <?php session_start(); ?>
 <?php require('headeri.php'); ?>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="jquery-1.11.2.min.js"></script>
+
 <script>
 $(document).ready(function(){
   $(".photo").hover(function(){
     $(".teksti").slideToggle("slow");
-
-
   });
 });
 </script>
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="jquery-1.11.2.min.js"></script>
+
 <script>
 $(document).ready(function(){
   $(".photo1").hover(function(){
     $(".teksti").slideToggle("slow");
-
-
   });
 });
 </script>
@@ -30,15 +30,17 @@ $(document).ready(function(){
 		window.location="https://magazine.artland.com/gallery-sign-up/";
 	}
 </script>
+
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
   $( function() {
     $( document ).tooltip();
   } );
-  </script>
+</script>
 
 <script>
 function showHint(str) {
@@ -57,6 +59,7 @@ function showHint(str) {
   }
 }
 </script>
+
   <style >
 	body
 	{
@@ -110,7 +113,6 @@ function showHint(str) {
 		left: 53%;
 		top: 550px;
 		transform:translate(10%,230%);
-
 		background-image:url('images/techSliderimages/6.jpg');
 		background-size: 100% 100%;
 		box-shadow: 1px 2px 10px 10px black;
@@ -128,7 +130,6 @@ function showHint(str) {
 		background-size: 100% 100%;
 		box-shadow: 1px 2px 10px 10px black;
 		animation:slider2 9s infinite linear;
-
 	}
 	.foto5
 	{
@@ -162,7 +163,7 @@ function showHint(str) {
 	/* pjesa e 6 fotove poshte dhe larte eshte deri ketu */
 
 	/* pjesa e fotove rrotulluese */
-		.fotorrotulluese{
+	.fotorrotulluese{
 
 			margin:auto;
 			padding-top: -550px;
@@ -190,14 +191,12 @@ function showHint(str) {
 			animation:rotar 15s infinite linear;
 			transform-style: preserve-3d;
 
-
 		}
 
 		.permbajtja-1:hover
 		{
 			animation-play-state: paused;
 			cursor: pointer;
-
 
 		}
 		.permbajtja-1 figure
@@ -259,7 +258,6 @@ function showHint(str) {
 			width: 100%;
 			height:100%;
 
-
 		}
 		.permbajtja-1 img:hover
 		{
@@ -268,8 +266,8 @@ function showHint(str) {
 		}
 		/* pjesa e fotove rrotulluese deri ketu */
 
-			/* css i fotos se pare djathtas*/
-			.photo, .photo img
+		/* css i fotos se pare djathtas*/
+		.photo, .photo img
 		{
 			width:13%;
 			height:200px;
@@ -317,8 +315,9 @@ function showHint(str) {
 			transform:translateY(-80px);
 		}
 		/* css i fotos se pare djathtas mbaron ketu */
+		
 		/* css i fotos se dyte majtas */
-			.photo1, .photo1 img
+		.photo1, .photo1 img
 		{
 			width:13%;
 			height:200px;
@@ -380,8 +379,6 @@ function showHint(str) {
 			left: 210px;
 			margin-left: 400px;
 
-
-
 		}
 		.photo1:hover img:nth-child(6):active
 		{
@@ -393,7 +390,6 @@ function showHint(str) {
 			bottom: 12%;
 			left: 210px;
 			margin-left: 400px;
-
 
 		}
 		.photo1:hover img:nth-child(7):active
@@ -420,7 +416,6 @@ function showHint(str) {
 			left: 210px;
 			margin-left: 400px;
 
-
 		}
 		.photo1:hover img:nth-child(9):active
 		{
@@ -446,7 +441,6 @@ function showHint(str) {
 			left: 210px;
 			margin-left: 400px;
 
-
 		}
 		.photo:hover img:nth-child(6):active
 		{
@@ -458,7 +452,6 @@ function showHint(str) {
 			bottom: 12%;
 			left: 210px;
 			margin-left: 400px;
-
 
 		}
 		.photo:hover img:nth-child(7):active
@@ -472,7 +465,6 @@ function showHint(str) {
 			left: 210px;
 			margin-left: 400px;
 
-
 		}
 		.photo:hover img:nth-child(8):active
 		{
@@ -485,7 +477,6 @@ function showHint(str) {
 			left: 210px;
 			margin-left: 400px;
 
-
 		}
 		.photo:hover img:nth-child(9):active
 		{
@@ -497,8 +488,10 @@ function showHint(str) {
 			bottom: 33%;
 			left: 210px;
 			margin-left: 400px;
+
 		}
 		/* pjesa e 2 fotove majtas dhe djathtas mbaron ketu */
+		
 		/* pjesa e footerit poshte*/
 		.footer-bottom
 		{
@@ -506,15 +499,15 @@ function showHint(str) {
 			margin-bottom: 25px;
 			color: white;
 		}
-		/* pjesa e shkrimit me drite*/
-		 *
+
+	/* pjesa e shkrimit me drite*/	
+	*
     {
       margin:0;
       padding: 0;
       box-sizing: border-box;
 
     }
-
 
     h2
     {
@@ -734,10 +727,9 @@ function showHint(str) {
     /* pjesa e shkrimit me drite mbaron ketu*/
 
 
-  	/* pjesa e fakteve me orange color*/
+  	/* pjesa e fakteve me lightblue color*/
     div.tedhenat
     {
-
    	 width: 380px;
 	 height: 480px;
 	 background-color : lightblue;
@@ -752,8 +744,6 @@ function showHint(str) {
 	margin-left: 2em;
 	margin-right: 2em;
 	text-align: center;
-
-
 
     }
 
@@ -775,7 +765,7 @@ function showHint(str) {
     	font-size: 21px;
     	margin-bottom: 40px;
     }
-    /* pjesa e fakteve me orange color*/
+    /* pjesa e fakteve me lightblue color mbaron ketu*/
 
     /* pjesa e fundit e 2 tabelave per regjister dhe vleresim*/
     div.butonat
@@ -784,23 +774,27 @@ function showHint(str) {
     	width: 500px;
     	border-radius: 90px;
     	background-color: teal;
-    	color: cyan;
+    	color: black;
     	text-align: center;
     	margin-right: 1px;
     	margin-left: 150px;
     	margin-top: 50px;
 
     }
+	div.butonat:hover 
+	{
+		background-color:lightblue;
+		color:black;
+		width: 501px;
+		height: 181px;
+	}
     h3.butoni1
     {
     	font-size: 18px;
     	padding-top: 30px;
-    	color: 	black;
     	padding-bottom: 10px;
     	padding-left: 30px;
     	padding-right: 30px;
-
-
     }
     input.button
     {
@@ -862,8 +856,6 @@ function showHint(str) {
     	transition: 2s;
     }
 
-
-
     div.rating
     {
     	width: 400px;
@@ -908,19 +900,18 @@ function showHint(str) {
 
     }
 
-
     h3.ratingid
     {
     	font-size: 20px;
-    	color: black ;
     	padding-bottom: 20px;
     	align-content: center;
-
-
     }
     /* ketu mbaron pjesa e tabelave me buttona*/
+
+	/* ketu fillojne tri pjeset poshte*/
+
 	* {
- 	 box-sizing: border-box;
+ 	 	box-sizing: border-box;
 	}
 	form#f{
 		margin-top:2em;
@@ -940,7 +931,12 @@ function showHint(str) {
 			display: inline-block;
  		    cursor: pointer;
 		}
-
+	input#ss:hover 
+	{
+		padding-left:8px;
+		padding-right:8px;
+		color:black;
+	}
 	.column {
 		text-align:center;
 		margin-top:4em;
@@ -951,13 +947,21 @@ function showHint(str) {
 		height: 100px;
 		color:purple;
 	}
-
+	.column:hover 
+	{
+		width: 22.53%;
+		height: 101px;
+		color:black;
+	}
 	.row:after {
 		text-align:center;
 		content: "";
 		display: table;
 		clear: both;
 	}
+
+	/* Animacionet */
+
      @keyframes animate
     {
       0%,80%
@@ -1016,98 +1020,87 @@ function showHint(str) {
         <table class="pos">
 		<tr>
 			<td>
+				<div class="foto1">
 
-			<div class="foto1">
-
-
-			</div>
+				</div>
 			</td>
 			<td>
+				<div class="foto2">
 
-			<div class="foto2">
-
-
-			</div>
+				</div>
 			</td>
 			<td>
+				<div class="foto3">
 
-			<div class="foto3">
-
-
-			</div>
+				</div>
 			</td>
 			<td>
+				<div class="foto4">
 
-			<div class="foto4">
-
-
-			</div>
+				</div>
 			</td>
 			<td>
+				<div class="foto5">
 
-			<div class="foto5">
-
-
-			</div>
+				</div>
 			</td>
 			<td colspan="2">
 
 
-				 <h2>
-	 	<div class="teksti">
-	   <span>.</span>
-	    <span>.</span>
-	    <span>.</span>
-	    <span>b</span>
-	   	 <span>e</span>
-	   	 <span>c</span>
-   		 <span>a</span>
-  	 	 <span>u</span>
-  	 	 <span>s</span>
-   		 <span>e</span>
-   		 <span></span>
-   		 <span>e</span>
-   		 <span>v</span>
-   		 <span>e</span>
-   		 <span>r</span>
-   		 <span>y</span>
-   		 <span></span>
-  	 	 <span>p</span>
-  	 	 <span>i</span>
-  	 	 <span>c</span>
-  	 	 <span>t</span>
-  	 	 <span>u</span>
-  	 	 <span>r</span>
-  	 	 <span>e</span>
-  	 	 <span></span>
-  	 	 <br>
-  	 	 <span>t</span>
-  	 	 <span>e</span>
-  	 	 <span>l</span>
-   	 	 <span>l</span>
-   		 <span>s</span>
-   		 <span></span>
-   	 	 <span>a</span>
-   		 <span></span>
-   		 <span>s</span>
-  	 	 <span>t</span>
-  	     <span>o</span>
-  		 <span>r</span>
-   		 <span>y</span>
-		 <span>.</span>
-  		 <span>.</span>
-   	 	 <span>.</span>
-    </h2>
+			<h2>
+	 		<div class="teksti">
+				<span>.</span>
+				<span>.</span>
+				<span>.</span>
+				<span>b</span>
+				<span>e</span>
+				<span>c</span>
+				<span>a</span>
+				<span>u</span>
+				<span>s</span>
+				<span>e</span>
+				<span></span>
+				<span>e</span>
+				<span>v</span>
+				<span>e</span>
+				<span>r</span>
+				<span>y</span>
+				<span></span>
+				<span>p</span>
+				<span>i</span>
+				<span>c</span>
+				<span>t</span>
+				<span>u</span>
+				<span>r</span>
+				<span>e</span>
+				<span></span>
+				<br>
+				<span>t</span>
+				<span>e</span>
+				<span>l</span>
+				<span>l</span>
+				<span>s</span>
+				<span></span>
+				<span>a</span>
+				<span></span>
+				<span>s</span>
+				<span>t</span>
+				<span>o</span>
+				<span>r</span>
+				<span>y</span>
+				<span>.</span>
+				<span>.</span>
+				<span>.</span>
+    		</h2>
 
-	</div>
+			</div>
 			</td>
 
 			<td>
 
-			<div class="foto6">
+				<div class="foto6">
 
-
-			</div>
+				</div>
 			</td>
 
 		</tr>
@@ -1163,13 +1156,8 @@ function showHint(str) {
                         <img src="images/techimages/9.jpg">
                     </a>
 
-
-
-
 			</div>
-
 		</div>
-
 
 		<div class="photo">
 			<img src="images/techimages/1.jpg">
@@ -1183,6 +1171,7 @@ function showHint(str) {
 			<img src="images/techimages/9.jpg">
 
 		</div>
+
 		<div class="photo1">
 			<img src="images/techimages/7.jpg">
 			<img src="images/techimages/8.jpg">
@@ -1194,12 +1183,10 @@ function showHint(str) {
 			<img src="images/TechFuturistic/5.jpg">
 			<img src="images/TechFuturistic/4.png">
 
-
 		</div>
 
-
-
 	</section>
+
 		<div class="footer">
 		<table class="tabelanefund">
 
@@ -1209,65 +1196,63 @@ function showHint(str) {
 
 						<h3 class="firsttitle">Technology facts you could never heard.</h3>
 
-					<img src="images/techFact/1.jpg" width="320px" height="180px" align="center" class="firstphoto">
+						<img src="images/techFact/1.jpg" width="320px" height="180px" align="center" class="firstphoto">
 
-					 <p class="firstperson">Over 3.8 billion people use the internet today, which is 40% of the world's population.
-					 8 billion devices will be connected to the internet by 2020.More than 570 new websites are created every minute.There are over 3.5 billion searches per day on Google.
-</p>
-				</div>
+					 	<p class="firstperson">Over 3.8 billion people use the internet today, which is 40% of the world's population.
+					 	8 billion devices will be connected to the internet by 2020.More than 570 new websites are created every minute.There are over 3.5 billion searches per day on Google.
+						</p>
+					</div>
 				</td>
 				<td>
 					<div class="tedhenat">
 						<h3 class="firsttitle">Alexa is always listening to your conversations.</h3>
 
-					<img src="images/techFact/2.jpeg" width="320px" height="180px" align="center" class="firstphoto">
+						<img src="images/techFact/2.jpeg" width="320px" height="180px" align="center" class="firstphoto">
 
-					 <p class="firstperson">
-					 This probably isn’t new to you. Siri has been doing it forever.
-					 Alexa stores your dialogue history to its cloud to help improve your Alexa experience.But, you can review and delete these recordings, either in bulk, or individually.
-</p>
+						<p class="firstperson">
+						This probably isn’t new to you. Siri has been doing it forever.
+						Alexa stores your dialogue history to its cloud to help improve your Alexa experience.But, you can review and delete these recordings, either in bulk, or individually.
+						</p>
 					</div>
 
 				</td>
 				<td>
 					<div class="tedhenat">
 						<h3 class="firsttitle"> Computer Security Day is celebrated on November 30th.
-</h3>
+						</h3>
 
-					<img src="images/techFact/3.jpg" width="320px" height="180px" align="center" class="firstphoto">
+						<img src="images/techFact/3.jpg" width="320px" height="180px" align="center" class="firstphoto">
 
-					 <p class="firstperson">
+						<p class="firstperson">
 
-					 It was started in 1988 to help raise the awareness of computer related security issues.
-					To celebrate Computer Security Day is easy, and important – check your privacy settings on Facebook, change your passwords to something stronger.
-					</p>
+						It was started in 1988 to help raise the awareness of computer related security issues.
+						To celebrate Computer Security Day is easy, and important – check your privacy settings on Facebook, change your passwords to something stronger.
+						</p>
 					</div>
 				</td>
 			</tr>
 		</table>
+
 <div>
-<form action="" id ="f">
-  <label for="fname">Background Color :</label>
-  <input type="text" id="fname" name="txt1" placeholder="Any color.."  onkeyup="showHint(this.value)">
-    <label for="lname">Text Color :</label>
-    <input type="text" id="lname" name="txt2" placeholder="Any color.." onkeyup="showHint(this.value)" >
-
-
-    <input id="ss" type="submit" value="submit" name="sub"/>
-	<p>Suggestions: <span id="txtHint"></span></p>
-  </form>
+	<form action="" id ="f">
+		<label for="fname">Background Color :</label>
+		<input type="text" id="fname" name="txt1" placeholder="Any color.."  onkeyup="showHint(this.value)">
+		<label for="lname">Text Color :</label>
+		<input type="text" id="lname" name="txt2" placeholder="Any color.." onkeyup="showHint(this.value)" >  
+		<input id="ss" type="submit" value="submit" name="sub"/>
+		<p>Suggestions: <span id="txtHint"></span></p>
+	</form>
 </div>
-	<table>
+<table>
 		<tr>
 			<td >
 
-
 				<div class="butonat">
-				<h3 class="butoni1"> If you make a lot of photos every day and want to share them with us and also get a lot of amazing photos , register now :
-				</h1>
-				<br>
-				<input class="button" type="submit" value="Register" onclick="location.href='login.php#register'">
-			</div>
+					<h3 class="butoni1"> If you make a lot of photos every day and want to share them with us and also get a lot of amazing photos , register now :
+					</h3>
+					<br>
+					<input class="button" type="submit" value="Register" onclick="location.href='login.php#register'">
+				</div>
 			</td>
 			<td >
 				<div class="butonat">
@@ -1275,8 +1260,6 @@ function showHint(str) {
 					<h3 class="ratingid" align="center">
 						Rate our Gallery
 					</h3>
-
-
 
 				<div class="rating1">
 					<input type="radio" name="gender" id="rate10" onclick="alert('Thank you')">
@@ -1300,53 +1283,55 @@ function showHint(str) {
 					<input type="radio" name="gender" id="rate1" onclick="alert('Thank you , we will try better next time .')">
 					<label for="rate1">1</label>
 				</div>
-        <script>
-       $(document).ready(function(){
-            $('input[type="radio"]').click(function(){
-                 var gender = $(this).val();
-                 $.ajax({
-                      url:"gallery.php",
-                      method:"POST",
-                      data:{gender:gender},
-                      success:function(data){
-                           $('#result').html(data);
-                      }
-                 });
-            });
-       });
-       </script>
+				<script>
+					$(document).ready(function(){
+							$('input[type="radio"]').click(function(){
+								var gender = $(this).val();
+								$.ajax({
+									url:"gallery.php",
+									method:"POST",
+									data:{gender:gender},
+									success:function(data){
+										$('#result').html(data);
+									}
+								});
+							});
+					});
+				</script>
 
-        <?php
-        if (isset($_POST['gender'])) {
-        echo $_POST['gender'];
-      }
-         ?>
-			</div>
-			</div>
+				<?php
+					if (isset($_POST['gender'])) {
+					echo $_POST['gender'];
+					}
+				?>
+				</div>
+				</div>
+			</td>	
 		</tr>
-	</table>
+</table>	
 
-		<div class="row">
-  <div class="column" style = "background-color:lightgreen; border-radius:10px; padding-top:12px;">
+<div class="row">
+	<div class="column" style = "background-color:lightgreen; border-radius:10px; padding-top:12px;">
+		<p><?php require('inheritance.php'); ?></p>
+	</div>
 
-    <p><?php require('inheritance.php'); ?></p>
-  </div>
-  <div class="column" style = "background-color:lightblue;" >
+	<div class="column" style = "background-color:lightblue;" >
+		<p><form action="WriteToFile.php" method="POST" style="margin:0;padding:0;">
+				<br>Give us advices :
+				<input name="field1" type="text" title="We ask for your advice just because improving our Gallery."/>
+				<input type="submit" id = "ss"  name="submit" value="Send">
+			</form>
 
-    <p><form action="WriteToFile.php" method="POST" style="margin:0;padding:0;">
-<br>Give us advices :
-    <input name="field1" type="text" title="We ask for your advice just because improving our Gallery."/>
-    <input type="submit" name="submit" value="Send">
-</form>
-<form action="readToFile.php" method="POST" style="margin:0;padding:0;">
-<br>
-	Read the advices :
-    <input type="submit" name="submit" value="Read" >
-</form></p>
-  </div>
-  <div class="column" style = "background-color:lightgreen; padding-top:2.4em; border-radius:10px;">
-  <p><?php require('personNumber.php'); ?></p>
-  </div>
+			<form action="readToFile.php" method="POST" style="margin:0;padding:0;">
+				<br>
+				Read the advices :
+				<input type="submit" id = "ss"  name="submit" value="Read" >
+			</form></p>
+	</div>
+
+	<div class="column" style = "background-color:lightgreen; padding-top:2.4em; border-radius:10px;">
+		<p><?php require('personNumber.php'); ?></p>
+	</div>
 </div>
 <?php
 require('rotateimg.php'); ?>
