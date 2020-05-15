@@ -100,7 +100,7 @@
     width: 56%;
     height: 20%;
     margin-top: 15%;
-    margin-bottom: :30%;
+    margin-bottom: 30%;
     align-content: center;
     }
     .form-control   {
@@ -112,6 +112,12 @@
     border-color:transparent;
     border: none;
     border-bottom: 4px solid #464646;
+    font-size: 15px;
+    color: black;
+    margin bottom: 15px;
+    padding-bottom: 20px;
+    font-family: sans-serif;
+    border-radius: 10px;
     }
     #contactForm{
     padding-top:5%;
