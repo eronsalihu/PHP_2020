@@ -87,6 +87,10 @@
      background:#7F7C7C;
      border-color:transparent;
        }
+    .innerdiv{
+
+      background-color: :white;
+    }
    </style>
     <form id="contactForm" action="" method="post">
            		<br>
