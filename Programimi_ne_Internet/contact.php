@@ -91,6 +91,18 @@
 
       background-color: :white;
     }
+    .none{
+  
+    box-sizing: content-box;
+   
+    margin-left: 21%;
+ 
+    width: 56%;
+    height: 20%;
+    margin-top: 15%;
+    margin-bottom: :30%;
+    align-content: center;
+    }
    </style>
     <form id="contactForm" action="" method="post">
            		<br>
