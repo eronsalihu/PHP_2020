@@ -76,6 +76,14 @@
 </script>
     <div class="none" style="background:unset !important">
     <div class="innerdivv" style="margin-left: 1em;">
+<style type="text/css">
+
+       #signupi{
+          background-color:#7F7C7C;
+          color:#1b3b9a;
+          color:white;
+        }
+   </style>
     <form id="contactForm" action="" method="post">
            		<br>
            		<input type="text" name="name" id="firstName" class="form-control" placeholder="Enter your name"value=<?php echo $name ?>><br><br>
