@@ -4,7 +4,61 @@ require('dbconfig.php');
 require('headeri.php');
 
 ?>
+<?php
+if (isset($_SESSION['username'])) {
+  $username=$_SESSION['username'];
+if(isset($_POST['but_upload'])){
+  $name = $_FILES['file']['name'];
+  $target_dir = "uploads/";
+  $target_file = $target_dir . basename($_FILES["file"]["name"]);
 
+  // Select file type
+  $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+  // Valid file extensions
+  $extensions_arr = array("jpg","jpeg","png","gif");
+
+  // Check extension
+  if( in_array($imageFileType,$extensions_arr) ){
+    $sql = "SELECT name from images where username=:username";
+    $stmt=$db->prepare($sql);
+    $stmt->bindParam(":username",$username);
+    $stmt->execute();
+    if ($result=$stmt->fetch()) {
+      $query="UPDATE images SET name=:name WHERE username='$username'";
+      $stmtInsert=$db->prepare($query);
+      $stmtInsert->bindParam(":name",$name);
+      $rezultati=$stmtInsert->execute();
+      if ($rezultati) {
+        echo '<script>alert("Your profile Picture Updated")</script>';
+        move_uploaded_file($_FILES['file']['tmp_name'],$target_dir.$name);
+      }
+    }
+    else{
+    // Insert record
+    $query = "INSERT INTO images values(?,?)";
+    $stmtInsert=$db->prepare($query);
+    $stmtInsert->execute([$username,$name]);
+
+    // Upload file
+    move_uploaded_file($_FILES['file']['tmp_name'],$target_dir.$name);
+  }
+  }
+}
+}
+ ?>
+ <?php
+ if (isset($_SESSION['username'])) {
+   $username=$_SESSION['username'];
+
+ $sql = "SELECT name from images where username=:username";
+ $stmt=$db->prepare($sql);
+ $stmt->bindParam(":username",$username);
+ $stmt->execute();
+ if($result = $stmt->fetch()){
+ $image = $result['name'];
+ $image_src = "uploads/".$image;}
+}
+?>
 
 <?php
 if(isset($_SESSION['username'])) {
@@ -61,16 +115,24 @@ if (isset($_SESSION['username'])) {
 
     <div class="avatar-upload">
         <div class="avatar-edit">
-            <input type='file' name="image" id="imageUpload" accept=".png, .jpg, .jpeg" />
+            <input type='file' name="file" id="imageUpload" accept=".png, .jpg, .jpeg" />
             <label for="imageUpload"></label>
         </div>
         <div class="avatar-preview" >
             <div id="imagePreview" >
+    <img style="width: 181px;
+    height: 181px;
+    position: relative;
+    border-radius: 100%;"
+ src='<?php echo $image_src;  ?>' >
+
+
             </div>
         </div>
     </div>
-    <input type="submit"  name="insert" id="insert" value="Insert">
+    <input type="submit" style="padding-bottom:38px"  name="but_upload" id="insert" value="Insert">
   </form>
+
 </div>
 </tr>
 </div>
@@ -116,19 +178,54 @@ if (isset($_SESSION['username'])) {
         <th><label>Profile Settings</label></th>
         <tr>
             <td> <label>First Name:</label> </td>
-            <td><input class="input" type="text" name=""></td>
+            <td><input class="input" type="text" name="" readonly value="<?php
+            if (isset($_SESSION['username'])) {
+          $username=$_SESSION['username'];
+
+  $query = "Select * from userInfo where useri=:username ";
+  $stmt=$db->prepare($query);
+  $stmt->bindParam(":username",$username);
+  $stmt->execute();
+  if ($result=$stmt->fetch()) {
+    echo $result['firstName'];
+  }
+            } ?>"></td>
 
         </tr>
         <tr>
             <td> <label>Last Name:</label> </td>
-            <td><input class="input" type="text" name=""></td>
+            <td><input class="input" type="text" name="" value="
+              <?php
+              if (isset($_SESSION['username'])) {
+            $username=$_SESSION['username'];
+
+    $query = "Select * from userInfo where useri=:username ";
+    $stmt=$db->prepare($query);
+    $stmt->bindParam(":username",$username);
+    $stmt->execute();
+    if ($result=$stmt->fetch()) {
+      echo $result['lastName'];
+    }
+              } ?>" readonly></td>
 
         </tr>
         <tr>
             <td> <label >Gender:</label> </td>
             <td>
                 <label class="radio-button">
-  <input type="radio" name="radio" checked="checked">
+  <input type="radio" name="radio" readonly <?php   if (isset($_SESSION['username'])) {
+  $username=$_SESSION['username'];
+
+$query = "Select * from userInfo where useri=:username ";
+$stmt=$db->prepare($query);
+$stmt->bindParam(":username",$username);
+$stmt->execute();
+if ($result=$stmt->fetch()) {
+  $check=$result['Gender'];
+  if ($check=='M') {
+
+
+   ?>checked <?php }}} ?>>
   <span class="label-visible">
     <span class="fake-radiobutton"></span>
     Male
@@ -136,7 +233,19 @@ if (isset($_SESSION['username'])) {
 </label>
 
 <label class="radio-button">
-  <input type="radio" name="radio">
+  <input type="radio" name="radio" <?php   if (isset($_SESSION['username'])) {
+  $username=$_SESSION['username'];
+
+$query = "Select * from userInfo where useri=:username ";
+$stmt=$db->prepare($query);
+$stmt->bindParam(":username",$username);
+$stmt->execute();
+if ($result=$stmt->fetch()) {
+  $check=$result['Gender'];
+  if ($check=='F') {
+
+
+   ?>checked <?php }}} ?> readonly>
   <span class="label-visible">
     <span class="fake-radiobutton"></span>
     Female
@@ -146,17 +255,50 @@ if (isset($_SESSION['username'])) {
         </tr>
         <tr>
             <td> <label>Birthday:</label> </td>
-            <td><input type="date" value="2020-01-01" min="2005-01-01" max="2100-01-01"></td>
+            <td><input type="text" class="input" readonly value="  <?php
+              if (isset($_SESSION['username'])) {
+            $username=$_SESSION['username'];
+
+    $query = "Select * from userInfo where useri=:username ";
+    $stmt=$db->prepare($query);
+    $stmt->bindParam(":username",$username);
+    $stmt->execute();
+    if ($result=$stmt->fetch()) {
+      echo $result['birthday'];
+    }
+              } ?>" ></td>
 
         </tr>
         <tr>
             <td> <label>About:</label> </td>
-            <td><textarea class="input"></textarea></td>
+            <td><textarea class="input"  readonly><?php
+              if (isset($_SESSION['username'])) {
+            $username=$_SESSION['username'];
+
+    $query = "Select * from userInfo where useri=:username ";
+    $stmt=$db->prepare($query);
+    $stmt->bindParam(":username",$username);
+    $stmt->execute();
+    if ($result=$stmt->fetch()) {
+      echo $result['about'];
+    }
+              } ?></textarea></td>
 
         </tr>
         <tr>
             <td> <label>Phone:</label> </td>
-            <td><input class="input" type="text" name=""></td>
+            <td><input class="input" type="text" value="<?php
+              if (isset($_SESSION['username'])) {
+            $username=$_SESSION['username'];
+
+    $query = "Select * from userInfo where useri=:username ";
+    $stmt=$db->prepare($query);
+    $stmt->bindParam(":username",$username);
+    $stmt->execute();
+    if ($result=$stmt->fetch()) {
+      echo $result['phone'];
+    }
+              } ?>" name="" readonly></td>
 
         </tr>
         <tr>
@@ -258,6 +400,10 @@ $gender=$_POST['gender'];
 $date=$_POST['date'];
 $about=$_POST['about'];
 $phone=$_POST['phone'];
+if (preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/",$date))
+    {
+      if (preg_match('/^[0-9\-\(\)\/\+\s]*$/',$phone)) {
+
 
 $query="SELECT * from userInfo where useri =:username";
 $stmt=$db->prepare($query);
@@ -276,21 +422,25 @@ $rezultati=$stmtInsert->execute();
 if ($rezultati) {
   echo '<script>alert("Your data successfully updated")</script>';
 }
-else {
-
-}
-
-
 }
 
 else {
 
-  $sql="INSERT INTO userInfo(useri,firstName,lastName,Gender,birthday,about,phone) VALUES('$username','$firstName','$lastName','$gender','$date','$about','$phone')";
+  $sql="INSERT INTO userInfo VALUES(?,?,?,?,?,?,?)";
   $stmtInsert=$db->prepare($sql);
+   $result=$stmtInsert->execute([$username,$firstName,$lastName,$gender,$date,$about,$phone]);
 $result=$stmt->execute();
 if ($result) {
 echo '<script>alert("Your profile is completed")</script>';
 }
+}
+
+}else {
+  echo '<script>alert("Numri juaj duhet te jete sipas standarteve te parapara!")</script>';
+}
+}
+else{
+    echo '<script>alert("Data juaj duhet te jete ne formatin yyyy-mm-dd!")</script>';
 }
 }
 }
@@ -564,13 +714,13 @@ input[type="radio"]:checked + span .fake-radiobutton:after { display: block; }
     margin-left: 1em;
     border-radius: 1.5em;
     padding: 1em;
-    height: 66em;
+    height: 71em;
 
 }
 .inner-cont{
     background-color: #B86366;
     color: white;
-    height: 41em;
+    height: 44em;
     margin: 1em;
     border-radius:1.5em;
     border: solid 20px #E3E2E0;
