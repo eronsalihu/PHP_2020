@@ -113,6 +113,11 @@
     border: none;
     border-bottom: 4px solid #464646;
     }
+    #contactForm{
+    padding-top:5%;
+    background-color:white ;
+    margin-bottom:10%;
+    }
    </style>
     <form id="contactForm" action="" method="post">
            		<br>
