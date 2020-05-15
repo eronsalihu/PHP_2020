@@ -2,53 +2,91 @@
   <?php
   require('headeri.php');
    ?>
-   <?php
-   $name = $email = $gender = $message = $subject = "";
-   $errName = $errEmail = $errGender = $errMessage = $errSubject = "";
+   <?php 
+  use PHPMailer\PHPMailer\PHPMailer;
+  use PHPMailer\PHPMailer\Exception;
+  require 'PHPMailer-master/src/Exception.php';
+  require 'PHPMailer-master/src/PHPMailer.php';
+  require 'PHPMailer-master/src/SMTP.php';
+$name = $email = $gender = $message = $subject = "";
+$errName = $errEmail = $errGender = $errMessage = $errSubject = "";
+$emailMessage = "";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if(empty($_POST["name"]))
+  {
+    $errName = "Name is required";
+  }
+  else{
+    $name = $_POST["name"];
+  }
 
-   if ($_SERVER["REQUEST_METHOD"] == "POST") {
-     if(empty($_POST["name"]))
-     {
-       $errName = "Name is required";
-     }
-     else{
-       $name = $_POST["name"];
-     }
-   if(empty($_POST["email"]))
-   {
+  if(empty($_POST["email"]))
+  {
     $errEmail = "Email is required";
-   }
-   else{
+  }
+  else{
     $emailRegex = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/'; 
     if (!preg_match($emailRegex, $_POST["email"])) {
       $errEmail = "Please enter a valid email";
     }
     $email = $_POST["email"];
-   }
-   if(empty($_POST["gender"]))
-   {
-    $errGender = "Gender is required";
-   }
-   else{
-    $gender = $_POST["gender"];
-   }
-   if(empty($_POST["subject"]))
-   {
-    $errSubject = "Subject is required";
-   }
-   else{
-    $subject = $_POST["subject"];
-   }
-   if(empty($_POST["message"]))
-   {
-    $errMessage = "Message is required";
-   }
-   else{
-    $message = $_POST["message"];
-   }
-   }
+  }
 
-   ?>
+  if(empty($_POST["gender"]))
+  {
+    $errGender = "Gender is required";
+  }
+  else{
+    $gender = $_POST["gender"];
+  }
+
+  if(empty($_POST["subject"]))
+  {
+    $errSubject = "Subject is required";
+  }
+  else{
+    $subject = $_POST["subject"];
+  }
+
+  if(empty($_POST["message"]))
+  {
+    $errMessage = "Message is required";
+  }
+  else{
+    $message = $_POST["message"];
+  }
+
+  $mail = new PHPMailer();
+  $mail->IsSMTP();
+  $mail->Mailer = "smtp";
+
+  $mail->SMTPDebug  = 1;  
+  $mail->SMTPAuth   = TRUE;
+  $mail->SMTPSecure = "tls";
+  $mail->Port       = 587;
+  $mail->Host       = "smtp.gmail.com";
+  $mail->Username   = "donikarexhepi13@gmail.com";
+  $mail->Password   = "engineering#13";
+
+  $mail->IsHTML(true);
+  $mail->AddAddress("donikarexhepi13@gmail.com", "Donika Rexhepi");
+  $mail->SetFrom("donikarexhepi13@gmail.com", "From SmartApp");
+  $mail->Subject = "Someone submited your form";
+  $content = "<b>This is a Test Email sent via Gmail SMTP Server using PHP mailer class.</b>";
+
+  $mail->MsgHTML($content); 
+  if(!$mail->Send()) {
+    $emailMessage = "Email sending failed!";
+    var_dump($mail);
+  } else {
+    $emailMessage = "Email sent succesfully!";
+
+  }
+}
+
+?>
+<?php
+
    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
    <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
    <script type="text/javascript">
@@ -149,7 +187,10 @@
            		<textarea name="message" placeholder="Your message to us.. "size="500"class="form-control" value=<?php echo $message ?>></textarea><br>
                <span class="error"><?php echo $errMessage ?></span><br>
              <br>
+ 
            		<div>Characters left:<span id="char-left"></span></div>
+              <span><?php echo  $emailMessage ?></span>
+
            		Accept Terms and Conditions:<br>
            		<input type="checkbox" name="terms" class="form-control" size="50"><br><br>
            		<input type="submit"  name="sub" class="form-control submit" value="Send" onclick="sendMessage();">
