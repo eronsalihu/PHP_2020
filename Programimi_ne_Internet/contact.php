@@ -83,6 +83,10 @@
           color:#1b3b9a;
           color:white;
         }
+     form .submit{
+     background:#7F7C7C;
+     border-color:transparent;
+       }
    </style>
     <form id="contactForm" action="" method="post">
            		<br>
