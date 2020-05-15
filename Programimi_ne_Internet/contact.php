@@ -103,6 +103,16 @@
     margin-bottom: :30%;
     align-content: center;
     }
+    .form-control   {
+  
+    width: 300px;
+    background-size: 50px;
+    background: transparent;
+ 
+    border-color:transparent;
+    border: none;
+    border-bottom: 4px solid #464646;
+    }
    </style>
     <form id="contactForm" action="" method="post">
            		<br>
