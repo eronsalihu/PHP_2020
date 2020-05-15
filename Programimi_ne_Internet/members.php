@@ -35,7 +35,7 @@ function showEditBox(editobj,id) {
 	$('#frmAdd').hide();
 	$(editobj).prop('disabled','true');
 	var currentMessage = $("#message_" + id + " .message-content").html();
-	var editMarkUp = '<textarea rows="5" cols="30" id="txtmessage_'+id+'">'+currentMessage+'</textarea><button name="ok" onClick="callCrudAction(\'edit\','+id+')">Save</button><button name="cancel" onClick="cancelEdit(\''+currentMessage+'\','+id+')">Cancel</button>';
+	var editMarkUp = '<textarea style=" border-radius:5px;border:solid 4px #B86366;background-color:#1F2531;font-size:1em;color:white;font-family:"Times-New-Roman";"rows="5" cols="25" id="txtmessage_'+id+'">'+currentMessage+'</textarea><br><button style="background-color:#1F2531;border:2px solid #B86366;color:white;border-radius:5px; margin-right:0.2em; height:25px; width:40px;" name="ok" onClick="callCrudAction(\'edit\','+id+')">Save</button><button style="background-color:#B86366;border-radius:5px;border:2px solid #1F2531;color:white;border-radius:5px; margin-right:0.2em; height:25px; width:50px;" name="cancel" onClick="cancelEdit(\''+currentMessage+'\','+id+')">Cancel</button>';
 	$("#message_" + id + " .message-content").html(editMarkUp);
 }
 function cancelEdit(message,id) {
