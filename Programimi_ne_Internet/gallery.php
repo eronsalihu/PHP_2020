@@ -1230,6 +1230,9 @@ function showHint(str) {
 						</p>
 					</div>
 				</td>
+				<td>
+					<?php require('icons.php'); ?>
+				</td>
 			</tr>
 		</table>
 
@@ -1309,6 +1312,7 @@ function showHint(str) {
 			</td>	
 		</tr>
 </table>	
+
 
 <div class="row">
 	<div class="column" style = "background-color:lightgreen; border-radius:10px; padding-top:12px;">
