@@ -305,31 +305,210 @@ Finally, use the Google Assistant, Amazon Alexa, or one of the SmartThings apps 
 <table>
   <tr>
     <td>
-<div class="booxi">
-<h1 class="h11">Technology allows us to do lots of things easier</h1>
-<p class="pp">Using educational technology for drill and practice of basic skills can be highly effective according to
-   a large body of data and a long history of use (Kulik, 1994).
-   Students usually learn more, and learn more rapidly, in courses that use computer assisted instruction (CAI)</p>
-</div>
+      <div class="booxi">
+      <h1 class="h11">Technology allows us to do lots of things easier</h1>
+      <p class="pp">Using educational technology for drill and practice of basic skills can be highly effective according to
+         a large body of data and a long history of use (Kulik, 1994).
+         Students usually learn more, and learn more rapidly, in courses that use computer assisted instruction (CAI)</p>
+      </div>
     </td>
-<td>
-<video src="videojaa.mp4" autoplay controls>
-</video>
-</td>
-<td>
-<div class="booxi1">
-<h1 class="h11" id="demo">Applications of Technology to Advanced Skills</h1>
-<p class="pp">The application of educational technologies to instruction has progressed beyond the use of basic drill and practice software,
-   and now includes the use of complex multimedia products and advanced networking technologies.
-   Today, students use multimedia to learn interactively and work on class projects. </p>
-</div>
-</td>
+  <td>
+  <video src="videojaa.mp4" autoplay controls>
+  </video>
+  </td>
+  <td>
+    <div class="booxi1">
+    <h1 class="h11" id="demo">Applications of Technology to Advanced Skills</h1>
+    <p class="pp">The application of educational technologies to instruction has progressed beyond the use of basic drill and practice software,
+       and now includes the use of complex multimedia products and advanced networking technologies.
+       Today, students use multimedia to learn interactively and work on class projects. </p>
+    </div>
+  </td>
 <tr>
 </table>
 
 <!-- Loja -->
 <button  onclick="window.location.href = 'game.php'" style="font-size:1em; margin-left:39em; margin-top:5em; height:50px;width:150px;
 	border-radius:7px;color:white;background-color:#B86466;"><i class="fa fa-gamepad"></i>  GAME</button>
+
+<br>
+
+
+
+<form class="" style="display: inline-block;" action="style_demo.php" method="post">
+  <input type="text" name="shteti" class="form__field" placeholder="Enter Country Name" required value="">
+  <input type="submit" name="kerko" style=""id="search" style="" value="Search">
+</form>
+
+<style media="screen">
+#search{
+  font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 16px;
+	color: #fff;
+  background: #576E86;
+	border: none;
+	padding: 10px 22px 24px 22px;
+	border-radius: 5px;
+	color: #A8BACE;
+}
+#search:hover{
+  background: #394D61;
+}
+.form__field {
+  font-family: inherit;
+  margin-left: 27em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+
+  border: 0;
+  border-bottom: 2px solid $gray;
+  outline: 0;
+  font-size: 1.3rem;
+  color: $white;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px}}
+
+</style>
+
+ <?php
+require "vendor/autoload.php";
+if (isset($_POST['kerko'])) {
+$shteti=$_POST['shteti'];
+$response = Unirest\Request::get("https://covid-193.p.rapidapi.com/statistics?country=".$shteti,
+  array(
+    "X-RapidAPI-Host" => "covid-193.p.rapidapi.com",
+    "X-RapidAPI-Key" => "525072fd78mshda77b2165e2c7cap1bc151jsn62510dd20d86"
+  )
+);
+echo "
+   <table class='table' style='border-collapse: collapse;
+  width: 100%;'>
+      <thead>
+        <th style='padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;'>Country</th>
+        <th style='padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;'>New</th>
+        <th style='padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;'>Active</th>
+        <th style='padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;'>Critical</th>
+        <th style='padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;'>Recovered</th>
+        <th style='padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;'>Total</th>
+      </thead>
+      <tbody>";
+
+  foreach ($response->body as $key => $statistics) {
+      if(is_Array($statistics)){
+        foreach ($statistics as $index => $value) {
+          echo "<tr><td style='padding: 8px;
+          text-align: left;
+          border-bottom: 1px solid #ddd;'>".
+            $value->country
+          ."</td>";
+          foreach ($value as $key => $v) {
+            if (isset($v->new)) {
+              echo "<td style='padding: 8px;
+              text-align: left;
+              border-bottom: 1px solid #ddd;'>".$v->new."</td>";
+            }
+            if(isset($v->active)){
+              echo "<td style='padding: 8px;
+              text-align: left;
+              border-bottom: 1px solid #ddd;'>".$v->active."</td>";
+            }
+            if (isset($v->critical)) {
+              echo "<td style='padding: 8px;
+              text-align: left;
+              border-bottom: 1px solid #ddd;'>".$v->critical."</td>";
+            }
+            if(isset($v->recovered)){
+              echo"<td style='padding: 8px;
+              text-align: left;
+              border-bottom: 1px solid #ddd;'>".$v->recovered."</td>";
+            }
+            if(isset($v->total)){
+              echo "<td style='padding: 8px;
+              text-align: left;
+              border-bottom: 1px solid #ddd;'>".$v->total."</td></tr>";
+              break;
+            }
+
+          }
+
+          }
+        }
+      }
+
+
+echo "</tbody></table>";
+
+}
+?>
+
 <?php
 require('footeri.php');
  ?>
+<style media="screen">
+input[type=text]{
+  width:100%;
+
+  border:2px solid #aaa;
+  border-radius:4px;
+  margin:8px 0;
+  outline:none;
+  padding:8px;
+  box-sizing:border-box;
+  transition:.3s;
+}
+
+input[type=text]:focus{
+  border-color:dodgerBlue;
+  box-shadow:0 0 8px 0 dodgerBlue;
+}
+.shteti{
+    position:absolute;
+    display:block;
+    width:80%;
+    height:60px;
+    background:#fff;
+    font-size:10pt;
+    text-transform:capitalize;
+    padding-left:20px;
+    color:rgba(0,0,0,.1);
+    @include prefix(box-shadow, 1px 1px 20px rgba(0,0,0,.2));
+    border:none;
+    @include prefix(border-radius,4px);
+    @include prefix(transition,all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55));
+     &:focus,
+     &:active:focus{
+      outline:none;
+      padding-left:30px;
+     }
+  }
+
+.shteti{
+  margin-bottom:10%;
+  z-index:2;
+  @include prefix(transition , .5s);
+}
+
+
+</style>
