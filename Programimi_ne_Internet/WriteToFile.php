@@ -39,7 +39,7 @@ h2#theh2 {
     <h2>The words you say to us make us better every day. If you got any idea for improving we will be happy to hear from you.</h2><br>
     <br><p><?php
 if(isset($_POST['field1'])) {
-    $data = " <br> ".$_POST['field1'] ."\r\n";
+    $data = nl2br("\n".$_POST['field1']);
     $ret = file_put_contents('Advices.txt', $data, FILE_APPEND | LOCK_EX);
     if($ret === false) {
         die('There was an error writing this file');
