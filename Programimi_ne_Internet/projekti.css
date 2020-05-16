@@ -11,6 +11,7 @@
   padding-bottom: 1.2em;
 
 }
+
 *{
 	margin: 0;
 	padding: 0;
@@ -259,7 +260,8 @@ p#shkronja{
 	padding-right: 1em;
 	border-bottom: solid 1px #ABABAB;
 	height: 5em;
-float: right;
+	float: right;
+	margin-right: 0em;
 
 }
 canvas#majtas{
@@ -271,9 +273,11 @@ canvas#myCanvas1{
 }
 div#djathtas{
 	float: right;
+	margin-right: 0em;
 }
 td#djathtas{
 	float: right;
+	margin-right: 0em;
 }
 p#qwe{
 	font-style: italic;
@@ -328,6 +332,7 @@ img.smartthing{
 	text-transform: uppercase;
 	font-weight: bold;
 	font-family:Times-New-Roman;
+
 
 }
 #signupi{
@@ -834,7 +839,7 @@ p#shkronja{
 	clear: both;
 	margin-top: 2em;
 	padding: 2em;
-
+	margin-right: 0em;
 	padding-left: 0em;
 	padding-right: 1em;
 	border-bottom: solid 1px #ABABAB;
