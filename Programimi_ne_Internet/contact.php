@@ -2,7 +2,7 @@
   <?php
   require('headeri.php');
    ?>
-   <?php 
+   <?php
   use PHPMailer\PHPMailer\PHPMailer;
   use PHPMailer\PHPMailer\Exception;
   require 'PHPMailer-master/src/Exception.php';
@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errEmail = "Email is required";
   }
   else{
-    $emailRegex = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/'; 
+    $emailRegex = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/';
     if (!preg_match($emailRegex, $_POST["email"])) {
       $errEmail = "Please enter a valid email";
     }
@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $mail->IsSMTP();
   $mail->Mailer = "smtp";
 
-  $mail->SMTPDebug  = 1;  
+  $mail->SMTPDebug  = 1;
   $mail->SMTPAuth   = TRUE;
   $mail->SMTPSecure = "tls";
   $mail->Port       = 587;
@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $mail->Subject = "Someone submited your form";
   $content = "<b>This is a Test Email sent via Gmail SMTP Server using PHP mailer class.</b>";
 
-  $mail->MsgHTML($content); 
+  $mail->MsgHTML($content);
   if(!$mail->Send()) {
     $emailMessage = "Email sending failed!";
     var_dump($mail);
@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
-<?php
+
 
    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
    <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
@@ -130,11 +130,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       background-color: :white;
     }
     .none{
-  
+
     box-sizing: content-box;
-   
+
     margin-left: 21%;
- 
+
     width: 56%;
     height: 20%;
     margin-top: 15%;
@@ -142,11 +142,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     align-content: center;
     }
     .form-control   {
-  
+
     width: 300px;
     background-size: 50px;
     background: transparent;
- 
+
     border-color:transparent;
     border: none;
     border-bottom: 4px solid #464646;
@@ -169,14 +169,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <button type="button" class="save" id="signupi">Save Name</button>
               <button type="button" class="access" id="signupi">Get Name</button><br>
               <span class="error"><?php echo $errName ?></span><br>
-           		
+
               <br>
               <input type="text" id="email" name="email"class="form-control" placeholder="Enter your email"value=<?php echo $email ?>><br>
               <span class="error"><?php echo $errEmail ?></span><br>
-           		
+
            		Gender:<br>
            		<input type="radio" name="gender"class="form-control" value="female" checked=""> Male<br>
-              
+
            		<input type="radio" name="gender"class="form-control" value="other"value=<?php echo $gender ?>> Female<br>
               <span class="error"><?php echo $errGender ?></span><br>
              <br>
@@ -187,7 +187,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
            		<textarea name="message" placeholder="Your message to us.. "size="500"class="form-control" value=<?php echo $message ?>></textarea><br>
                <span class="error"><?php echo $errMessage ?></span><br>
              <br>
- 
+
            		<div>Characters left:<span id="char-left"></span></div>
               <span><?php echo  $emailMessage ?></span>
 
@@ -279,7 +279,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      </script>
      <script>
 
-     
+
        function updateBackground() {
      var
        hr = (new Date()).getHours(),
