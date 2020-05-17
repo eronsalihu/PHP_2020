@@ -166,6 +166,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     background-color:white ;
     margin-bottom:10%;
     }
+   .no{
+   padding:10px;
+   color:grey;
+   padding-right:200px;
+   text-align: center;
+  }
+  .ye{
+  padding:10px;
+  color:grey;
+  padding-right:186px;
+  }
    </style>
     <form id="contactForm" action="" method="post">
            		<br>
