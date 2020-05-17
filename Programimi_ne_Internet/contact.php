@@ -284,7 +284,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      <script>
 
 
-       function updateBackground() {
+     /*  function updateBackground() {
      var
        hr = (new Date()).getHours(),
        body = document.body,
@@ -306,7 +306,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    }
 
    setInterval(updateBackground, 1000 * 60);
-   updateBackground();
+   updateBackground();*/
      </script>
 
   <footer >
