@@ -3,7 +3,7 @@
   require('headeri.php');
    ?>
    <?php
-  use PHPMailer\PHPMailer\PHPMailer;
+   use PHPMailer\PHPMailer\PHPMailer;
   use PHPMailer\PHPMailer\Exception;
   require 'PHPMailer-master/src/Exception.php';
   require 'PHPMailer-master/src/PHPMailer.php';
@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errEmail = "Email is required";
   }
   else{
-    $emailRegex = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/';
+    $emailRegex = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/'; 
     if (!preg_match($emailRegex, $_POST["email"])) {
       $errEmail = "Please enter a valid email";
     }
@@ -56,11 +56,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = $_POST["message"];
   }
 
+
+
+
   $mail = new PHPMailer();
   $mail->IsSMTP();
   $mail->Mailer = "smtp";
 
-  $mail->SMTPDebug  = 1;
+  $mail->SMTPDebug  = 1;  
   $mail->SMTPAuth   = TRUE;
   $mail->SMTPSecure = "tls";
   $mail->Port       = 587;
@@ -70,11 +73,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   $mail->IsHTML(true);
   $mail->AddAddress("donikarexhepi13@gmail.com", "Donika Rexhepi");
-  $mail->SetFrom("donikarexhepi13@gmail.com", "From SmartApp");
+  $mail->SetFrom($email);
   $mail->Subject = "Someone submited your form";
-  $content = "<b>This is a Test Email sent via Gmail SMTP Server using PHP mailer class.</b>";
+  $mail->addReplyTo($email,$name);
 
-  $mail->MsgHTML($content);
+
+ $mail->SMTPDebug=false;
+  $mail->MsgHTML($message); 
   if(!$mail->Send()) {
     $emailMessage = "Email sending failed!";
     var_dump($mail);
@@ -83,7 +88,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   }
 }
-
 ?>
 
 
